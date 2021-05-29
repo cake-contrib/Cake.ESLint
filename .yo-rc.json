@@ -1,0 +1,21 @@
+{
+  "generator-cake-addin": {
+    "promptValues": {
+      "projectName": "ESLint",
+      "repositoryOwner": "nils-a",
+      "projectMaintainer": "nils-a",
+      "author": "Nils Andresen",
+      "description": "Makes [ESLint](https://eslint.org/docs/user-guide/command-line-interface) available as a tool in [Cake](https://cakebuild.net/)",
+      "shortDescription": "Makes ESLint available as a tool in Cake.",
+      "licenseType": "MIT",
+      "sourceDir": "./src",
+      "scriptName": "recipe.cake",
+      "enableAllContributors": true,
+      "enableWyam": false,
+      "enableTravis": false,
+      "useTabs": false,
+      "indentSize": 4,
+      "indentYamlSize": 2
+    }
+  }
+}

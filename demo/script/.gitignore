@@ -1,0 +1,7 @@
+tools/
+output/
+.vscode/
+node_modules/
+package.json
+package-lock.json
+output.json
