@@ -1,13 +1,25 @@
 {
-    "files": [
-        "README.md"
-    ],
-    "imageSize": 100,
-    "commit": false,
-    "contributors": [],
-    "contributorsPerLine": 7,
-    "projectName": "Cake.ESLint",
-    "projectOwner": "cake-contrib",
-    "repoType": "github",
-    "repoHost": "https://github.com"
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "nils-a",
+      "name": "Nils Andresen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/349188?v=4",
+      "profile": "https://github.com/nils-a",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "Cake.ESLint",
+  "projectOwner": "cake-contrib",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
