@@ -14,6 +14,7 @@ Makes [ESLint](https://eslint.org/docs/user-guide/command-line-interface) availa
 
 - [Install](#install)
 - [Usage](#usage)
+- [Discussion](#discussion)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
@@ -34,6 +35,12 @@ Task("MyTask").Does(() => {
   ESLint();
 });
 ```
+
+## Discussion
+
+If you have questions, search for an existing one, or create a new discussion on the Cake GitHub repository, using the `extension Q&A` category.
+
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
 
 ## Maintainer
 
