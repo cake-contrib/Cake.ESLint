@@ -10,7 +10,9 @@ BuildParameters.SetParameters(
     masterBranchName: "main",
     repositoryOwner: "cake-contrib",
     shouldRunDotNetCorePack: true,
-    shouldUseDeterministicBuilds: true);
+    shouldUseDeterministicBuilds: true,
+    preferredBuildProviderType: BuildProviderType.GitHubActions,
+    preferredBuildAgentOperatingSystem: PlatformFamily.Windows);
 
 BuildParameters.PrintParameters(Context);
 
