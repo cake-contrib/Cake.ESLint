@@ -76,7 +76,7 @@ namespace Cake.ESLint
         /// tool returns a non-zero exit code.
         /// If <c>ContinueOnErrors</c> is set to true a warning will be
         /// written to the log file but no exception will be thrown, for
-        /// exit code 1 (see <see href="https://eslint.org/docs/user-guide/command-line-interface#exit-codes"/>).
+        /// exit code 1 (see <see href="https://eslint.org/docs/user-guide/command-line-interface#exit-codes">exit-codes in the docs</see>).
         /// </para>
         /// </summary>
         public bool ContinueOnErrors { get; set; }

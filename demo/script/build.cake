@@ -52,7 +52,7 @@ Task("local-project")
 });
 
 Task("Default")
- .IsDependentOn("local-project");
- //.IsDependentOn("manual-installation")
+   .IsDependentOn("local-project")
+   .IsDependentOn("manual-installation");
 
 RunTarget(target);

@@ -31,17 +31,41 @@ namespace Cake.ESLint
     /// <para>Functions to call <see href="https://eslint.org/">eslint</see>.</para>
     /// <para>
     /// In order to use this add-in, eslint has to be available.
+    /// </para>
+    /// <para>
     /// One option is using
     /// <see href="https://cake-contrib.github.io/Cake.Npm.Module/">Cake.Npm.Module</see> to install
     /// <see href="https://www.npmjs.com/package/eslint">ESLint from npmjs.com</see>.
     /// </para>
     /// <para>
-    /// To install add the following lines to your cake-file:
+    /// Another option is, if you have an npm project setup, to add ESLint to
+    /// package.json and call NpmInstall to be sure it it available.
+    /// <see href="https://cake-contrib.github.io/Cake.Npm.Module/">Cake.Npm.Module</see> to install
+    /// <see href="https://www.npmjs.com/package/eslint">ESLint from npmjs.com</see>.
+    /// </para>
+    /// <para>
+    /// Example:
     /// <code>
     /// <![CDATA[
-    /// #module nuget:?package=Cake.Npm.Module&version=2.0.2
-    /// #tool npm:?package=eslint&version=7.27.0
+    /// #addin "nuget:?package=Cake.Npm"
     /// #addin "nuget:?package=Cake.ESLint"
+    /// Task("lint")
+    ///   .Does(() => {
+    ///     // ensure elsint is installed from npm
+    ///     NpmInstall(new NpmInstallSettings {
+    ///       WorkingDirectory = "src"
+    ///     });
+    ///
+    ///     // run lint
+    ///     var settings = new ESLintSettings {
+    ///       WorkingDirectory = "src",
+    ///       Output = "../output.json", // relative from WorkingDirectory
+    ///       OutputFormat = ESLintOutputFormat.Json,
+    ///       ContinueOnErrors = true
+    ///     };
+    ///     settings.Directories.Add("."); // again, relative from WorkingDirectory
+    ///     ESLint(settings);
+    ///   });
     /// ]]>
     /// </code>
     /// </para>
