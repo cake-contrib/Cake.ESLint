@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Cake.Frosting" Version="1.1.0" />
+    <PackageReference Include="Cake.Npm" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cake.ESLint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\src\Cake.ESLint\bin\Debug\netstandard2.0\Cake.ESLint.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="tools\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="tools\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="tools\**" />
+  </ItemGroup>
+</Project>
