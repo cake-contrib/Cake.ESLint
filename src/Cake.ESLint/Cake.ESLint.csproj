@@ -20,13 +20,13 @@
         <!-- Properties related to packaging -->
         <Authors>Nils Andresen</Authors>
         <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
-        <Description>Makes [ESLint](https://eslint.org/docs/user-guide/command-line-interface) available as a tool in [Cake](https://cakebuild.net/)</Description>
+        <Description>Makes ESLint available as a tool in Cake.</Description>
         <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageProjectUrl>https://github.com/nils-a/Cake.ESLint</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/cake-contrib/Cake.ESLint</PackageProjectUrl>
         <PackageTags>cake;addin;eslint;build;cake-build;script;cake-addin</PackageTags>
-        <RepositoryUrl>https://github.com/nils-a/Cake.ESLint.git</RepositoryUrl>
-        <PackageReleaseNotes>https://github.com/nils-a/Cake.ESLint/releases/tag/$(Version)</PackageReleaseNotes>
+        <RepositoryUrl>https://github.com/cake-contrib/Cake.ESLint.git</RepositoryUrl>
+        <PackageReleaseNotes>https://github.com/cake-contrib/Cake.ESLint/releases/tag/$(Version)</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
@@ -34,6 +34,10 @@
         <PackageReference Include="CakeContrib.Guidelines" Version="1.1.1">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="stylecop.analyzers" Version="1.1.118">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>

@@ -14,6 +14,7 @@ Makes [ESLint](https://eslint.org/docs/user-guide/command-line-interface) availa
 
 - [Install](#install)
 - [Usage](#usage)
+- [Discussion](#discussion)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
@@ -35,6 +36,12 @@ Task("MyTask").Does(() => {
 });
 ```
 
+## Discussion
+
+If you have questions, search for an existing one, or create a new discussion on the Cake GitHub repository, using the `extension Q&A` category.
+
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
+
 ## Maintainer
 
 [Nils Andresen @nils-a][maintainer]
@@ -55,7 +62,17 @@ This project follows the [all-contributors][] specification. Contributions of an
 Thanks goes to these wonderful people ([emoji key][emoji-key]):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/nils-a"><img src="https://avatars.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=nils-a" title="Code">💻</a> <a href="#maintenance-nils-a" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
@@ -63,11 +80,11 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [MIT License © Nils Andresen][license]
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
-[all-contributorsimage]: https://img.shields.io/github/all-contributors/nils-a/Cake.ESLint.svg?color=orange&style=flat-square
+[all-contributorsimage]: https://img.shields.io/github/all-contributors/cake-contrib/Cake.ESLint.svg?color=orange&style=flat-square
 [appveyor]: https://ci.appveyor.com/project/nilsa/cake-eslint
 [appveyorimage]: https://img.shields.io/appveyor/ci/nilsa/cake-eslint.svg?logo=appveyor&style=flat-square
-[codecov]: https://codecov.io/gh/nils-a/Cake.ESLint
-[codecovimage]: https://img.shields.io/codecov/c/github/nils-a/Cake.ESLint.svg?logo=codecov&style=flat-square
+[codecov]: https://codecov.io/gh/cake-contrib/Cake.ESLint
+[codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.ESLint.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
 [contributing]: CONTRIBUTING.md
 [emoji-key]: https://allcontributors.org/docs/en/emoji-key
