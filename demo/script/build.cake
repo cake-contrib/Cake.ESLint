@@ -14,7 +14,7 @@ var target = Argument("target", "Default");
 Task("ensure-eslint-tool")
 .Does(() => 
 {
-   var tools = Directory("tools");
+   var tools = Context.Configuration.GetToolPath(Context.Environment.WorkingDirectory, Context.Environment);
    CreateDirectory(tools);
    var settings = new NpmInstallSettings 
    {
