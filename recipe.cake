@@ -8,7 +8,7 @@ BuildParameters.SetParameters(
     sourceDirectoryPath: "./src",
     title: "Cake.ESLint",
     masterBranchName: "main",
-    repositoryOwner: "nils-a",
+    repositoryOwner: "cake-contrib",
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true);
 

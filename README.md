@@ -63,11 +63,11 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [MIT License © Nils Andresen][license]
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
-[all-contributorsimage]: https://img.shields.io/github/all-contributors/nils-a/Cake.ESLint.svg?color=orange&style=flat-square
+[all-contributorsimage]: https://img.shields.io/github/all-contributors/cake-contrib/Cake.ESLint.svg?color=orange&style=flat-square
 [appveyor]: https://ci.appveyor.com/project/nilsa/cake-eslint
 [appveyorimage]: https://img.shields.io/appveyor/ci/nilsa/cake-eslint.svg?logo=appveyor&style=flat-square
-[codecov]: https://codecov.io/gh/nils-a/Cake.ESLint
-[codecovimage]: https://img.shields.io/codecov/c/github/nils-a/Cake.ESLint.svg?logo=codecov&style=flat-square
+[codecov]: https://codecov.io/gh/cake-contrib/Cake.ESLint
+[codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.ESLint.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
 [contributing]: CONTRIBUTING.md
 [emoji-key]: https://allcontributors.org/docs/en/emoji-key
