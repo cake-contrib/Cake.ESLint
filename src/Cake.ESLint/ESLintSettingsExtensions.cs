@@ -22,6 +22,9 @@
  * SOFTWARE.
  */
 
+using System.Collections.Generic;
+using System.Linq;
+
 using Cake.Core.IO;
 
 namespace Cake.ESLint
@@ -39,6 +42,30 @@ namespace Cake.ESLint
         public static void SetParser(this ESLintSettings @this, FilePath pathToPlugin)
         {
             @this.Parser = pathToPlugin.FullPath;
+        }
+
+        /// <summary>
+        /// Adds to <see cref="ESLintSettings.Directories"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="directoryPaths">The paths to add.</param>
+        public static void AddDirectory(this ESLintSettings @this, params DirectoryPath[] directoryPaths)
+        {
+            var paths = @this.Directories?.ToList() ?? new List<DirectoryPath>();
+            paths.AddRange(directoryPaths);
+            @this.Directories = paths;
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.Files"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="filePaths">The paths to add.</param>
+        public static void AddFile(this ESLintSettings @this, params FilePath[] filePaths)
+        {
+            var paths = @this.Files?.ToList() ?? new List<FilePath>();
+            paths.AddRange(filePaths);
+            @this.Files = paths;
         }
     }
 }

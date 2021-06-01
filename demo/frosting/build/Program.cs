@@ -47,11 +47,11 @@ public sealed class LintWithManualInstallation : FrostingTask<BuildContext>
 {
     public override void Run(BuildContext context)
     {
-        var settings = new ESLintSettings {
-            ContinueOnErrors = true
-        };
-        settings.Directories.Add("../src1");
-        context.ESLint(settings);
+        context.ESLint(settings =>
+        {
+            settings.ContinueOnErrors = true;
+            settings.AddDirectory("../src1");
+        });
     }
 }
 
@@ -64,14 +64,14 @@ public sealed class LintInLocalNpmProject : FrostingTask<BuildContext>
             WorkingDirectory = "../src2"
         });
 
-        var settings = new ESLintSettings {
-            WorkingDirectory = "../src2",
-            Output = "../output.json", // relative to WorkingDirectory
-            OutputFormat = ESLintOutputFormat.Json,
-            ContinueOnErrors = true
-        };
-        settings.Directories.Add("."); // relative to WorkingDirectory
-        context.ESLint(settings);
+        context.ESLint(settings =>
+        {
+            settings.WorkingDirectory = "../src2";
+            settings.Output = "../output.json"; // relative to WorkingDirectory
+            settings.OutputFormat = ESLintOutputFormat.Json;
+            settings.ContinueOnErrors = true;
+            settings.AddDirectory("."); // relative to WorkingDirectory
+        });
     }
 }
 

@@ -157,9 +157,29 @@ namespace Cake.ESLint.Tests
         }
 
         [Fact]
+        public void Should_add_inputFiles_when_Files_is_set_from_extension()
+        {
+            fixture.Settings.AddFile("foo", "bar");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("\"foo\" \"bar\"");
+        }
+
+        [Fact]
         public void Should_add_inputDirectories_when_Directories_is_set()
         {
             fixture.Settings.Directories = new[] {new DirectoryPath("foo"), new DirectoryPath("bar")};
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("\"foo\" \"bar\"");
+        }
+
+        [Fact]
+        public void Should_add_inputDirectories_when_Directories_is_set_from_extension()
+        {
+            fixture.Settings.AddDirectory("foo", "bar");
 
             var actual = fixture.Run();
 

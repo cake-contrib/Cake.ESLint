@@ -59,14 +59,13 @@ namespace Cake.ESLint
     ///     });
     ///
     ///     // run lint
-    ///     var settings = new ESLintSettings {
-    ///       WorkingDirectory = "src",
-    ///       Output = "../output.json", // relative from WorkingDirectory
-    ///       OutputFormat = ESLintOutputFormat.Json,
-    ///       ContinueOnErrors = true
-    ///     };
-    ///     settings.Directories.Add("."); // again, relative from WorkingDirectory
-    ///     ESLint(settings);
+    ///     ESLint(x => {
+    ///         x.WorkingDirectory = "src2";
+    ///         x.Output = "../output.json"; // relative to WorkingDirectory
+    ///         x.OutputFormat = ESLintOutputFormat.Json;
+    ///         x.ContinueOnErrors = true;
+    ///         x.AddDirectory("."); // relative to WorkingDirectory
+    ///      });
     ///   });
     /// ]]>
     /// </code>
