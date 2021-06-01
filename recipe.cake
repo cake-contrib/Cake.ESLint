@@ -12,7 +12,7 @@ BuildParameters.SetParameters(
     shouldRunDotNetCorePack: true,
     shouldUseDeterministicBuilds: true,
     preferredBuildProviderType: BuildProviderType.GitHubActions,
-    preferredBuildAgentOperatingSystem: PlatformFamily.Windows);
+    preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
 
 BuildParameters.PrintParameters(Context);
 
