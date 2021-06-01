@@ -30,6 +30,7 @@ using Cake.Core;
 using Cake.Core.Diagnostics;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
+using Cake.ESLint.Extensions;
 
 namespace Cake.ESLint
 {
@@ -140,13 +141,50 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted("--output-file", settings.Output.FullPath);
             }
 
+            if (settings.Config != null)
+            {
+                builder.AppendSwitchQuoted("--config", settings.Config.FullPath);
+            }
+
+            foreach (var env in settings.Environments.EnsureNotNull())
+            {
+                builder.AppendSwitch("--env", env);
+            }
+
+            foreach (var ext in settings.Extensions.EnsureNotNull())
+            {
+                builder.AppendSwitch("--ext", ext);
+            }
+
+            foreach (var global in settings.Globals.EnsureNotNull())
+            {
+                builder.AppendSwitch("--global", global);
+            }
+
+            if (settings.Parser != null)
+            {
+                builder.AppendSwitchQuoted("--parser", settings.Parser);
+            }
+
+            foreach (var opts in settings.ParserOptions.EnsureNotNull())
+            {
+                builder.AppendSwitch("--parser-options", opts);
+            }
+
+            if (settings.ResolvePluginsRelativeTo != null)
+            {
+                builder.AppendSwitchQuoted(
+                    "--resolve-plugins-relative-to",
+                    settings.ResolvePluginsRelativeTo.FullPath);
+            }
+
             // render arguments
-            foreach (var file in settings.Files)
+            foreach (var file in settings.Files.EnsureNotNull())
             {
                 builder.AppendQuoted(file.FullPath);
             }
 
-            foreach (var directory in settings.Directories)
+            foreach (var directory in settings.Directories.EnsureNotNull())
             {
                 builder.AppendQuoted(directory.FullPath);
             }

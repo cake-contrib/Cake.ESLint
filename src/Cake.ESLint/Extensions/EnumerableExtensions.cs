@@ -1,4 +1,4 @@
-/*
+﻿/*
  * MIT License
  *
  * Copyright (c) 2021 Nils Andresen
@@ -22,52 +22,25 @@
  * SOFTWARE.
  */
 
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
 
-using Cake.Core.IO;
-using Cake.ESLint.Tests.Fixtures;
-
-using VerifyXunit;
-
-using Xunit;
-
-namespace Cake.ESLint.Tests
+namespace Cake.ESLint.Extensions
 {
-    [UsesVerify]
-    public class ESLintAliasesTests
+    /// <summary>
+    /// Internal use only.
+    /// </summary>
+    internal static class EnumerableExtensions
     {
-        private readonly ESLintAliasesFixture fixture;
-
-        public ESLintAliasesTests()
+        /// <summary>
+        /// Ensures not null.
+        /// </summary>
+        /// <typeparam name="T">Elements of the Enumerable.</typeparam>
+        /// <param name="this">The Enumerable to check for null.</param>
+        /// <returns>An enumerable that is never null.</returns>
+        internal static IEnumerable<T> EnsureNotNull<T>(this IEnumerable<T> @this)
         {
-            fixture = new ESLintAliasesFixture();
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_no_settings()
-        {
-            fixture.Settings = null;
-
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_given_settings()
-        {
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_given_action()
-        {
-            fixture.Action = x => x.Files = new[] {new FilePath("**/*")};
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
+            return @this ?? Enumerable.Empty<T>();
         }
     }
 }

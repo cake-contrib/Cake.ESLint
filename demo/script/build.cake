@@ -28,11 +28,10 @@ Task("ensure-eslint-tool")
 Task("manual-installation")
 .IsDependentOn("ensure-eslint-tool")
 .Does(() => {
-   var settings = new ESLintSettings {
-      ContinueOnErrors = true
-   };
-   settings.Directories.Add("src1");
-   ESLint(settings);
+   ESLint(x => {
+      x.ContinueOnErrors = true;
+      x.AddDirectory("src1");
+   });
 });
 
 Task("local-project")
@@ -41,14 +40,13 @@ Task("local-project")
       WorkingDirectory = "src2"
    });
 
-   var settings = new ESLintSettings {
-      WorkingDirectory = "src2",
-      Output = "../output.json",
-      OutputFormat = ESLintOutputFormat.Json,
-      ContinueOnErrors = true
-   };
-   settings.Directories.Add(".");
-   ESLint(settings);
+   ESLint(x => {
+      x.WorkingDirectory = "src2";
+      x.Output = "../output.json"; // relative to WorkingDirectory
+      x.OutputFormat = ESLintOutputFormat.Json;
+      x.ContinueOnErrors = true;
+      x.AddDirectory("."); // relative to WorkingDirectory
+   });
 });
 
 Task("Default")
