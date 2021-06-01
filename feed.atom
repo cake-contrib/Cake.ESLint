@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<id>http://cake-contrib.github.io/Cake.ESLint</id>
+	<title>Cake.ESLint</title>
+	<link rel="self" href="http://cake-contrib.github.io/Cake.ESLint" />
+	<rights>2021</rights>
+	<updated>2021-06-01T07:29:26Z</updated>
+</feed>
