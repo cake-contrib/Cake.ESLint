@@ -39,20 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"ESLintAliases",
-            content:"ESLintAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
-            title:"ESLintAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
             title:"ESLintOutputFormat",
             content:"ESLintOutputFormat",
             description:'',
@@ -66,7 +52,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:2,
+            id:1,
             title:"ESLintSettings",
             content:"ESLintSettings",
             description:'',
@@ -80,7 +66,35 @@ var searchModule = function() {
     );
     a(
         {
+            id:2,
+            title:"ESLintSettingsExtensions",
+            content:"ESLintSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
+            title:"ESLintSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
             id:3,
+            title:"ESLintAliases",
+            content:"ESLintAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
+            title:"ESLintAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"ESLintRunner",
             content:"ESLintRunner",
             description:'',

@@ -158,6 +158,9 @@
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
     This namespace contain types used for operations using the ESLint tool wrapper.
+    <p>
+    See <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintAliases">ESLintAliases</a></code> for samples.
+    </p>
     </div>
 
 
@@ -202,14 +205,13 @@
      });
 
      // run lint
-     var settings = new ESLintSettings {
-       WorkingDirectory = "src",
-       Output = "../output.json", // relative from WorkingDirectory
-       OutputFormat = ESLintOutputFormat.Json,
-       ContinueOnErrors = true
-     };
-     settings.Directories.Add("."); // again, relative from WorkingDirectory
-     ESLint(settings);
+     ESLint(x =&gt; {
+         x.WorkingDirectory = "src2";
+         x.Output = "../output.json"; // relative to WorkingDirectory
+         x.OutputFormat = ESLintOutputFormat.Json;
+         x.ContinueOnErrors = true;
+         x.AddDirectory("."); // relative to WorkingDirectory
+      });
    });</code></pre>
      <p></p>
      </td>
@@ -230,6 +232,12 @@
 								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a></td>
 									<td>
     Settings to run eslint.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></td>
+									<td>
+    Convenient extensions for <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a></code>.
     </td>
 							</tr>
 					</tbody></table>

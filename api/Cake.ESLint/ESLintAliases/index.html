@@ -140,6 +140,7 @@
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat">ESLintOutputFormat</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintRunner">ESLintRunner</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></li>
 
 
                     </ul>
@@ -188,14 +189,13 @@
      });
 
      // run lint
-     var settings = new ESLintSettings {
-       WorkingDirectory = "src",
-       Output = "../output.json", // relative from WorkingDirectory
-       OutputFormat = ESLintOutputFormat.Json,
-       ContinueOnErrors = true
-     };
-     settings.Directories.Add("."); // again, relative from WorkingDirectory
-     ESLint(settings);
+     ESLint(x =&gt; {
+         x.WorkingDirectory = "src2";
+         x.Output = "../output.json"; // relative to WorkingDirectory
+         x.OutputFormat = ESLintOutputFormat.Json;
+         x.ContinueOnErrors = true;
+         x.AddDirectory("."); // relative to WorkingDirectory
+      });
    });</code></pre>
      <p></p>
      </div>
@@ -276,7 +276,7 @@ public static class ESLintAliases</code></pre>
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintAliases/DB08B982">ESLint<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintAliases/D915316F">ESLint<wbr>(ICakeContext, <wbr>Action<wbr>&lt;<wbr>E<wbr>S<wbr>Lint<wbr>Settings&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>

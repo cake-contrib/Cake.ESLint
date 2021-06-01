@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.ESLint - API - ESLintSettings.NoEslintRc Property</title>
+        <title>Cake.ESLint - API - ESLintSettings.Parser Property</title>
         <link href="/Cake.ESLint/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -146,10 +146,10 @@
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/858FA456">Extensions</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C01E9279">Files</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/1D2A0743">Globals</a></li>
-				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/4692F4AF">NoEslintRc</a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/4692F4AF">NoEslintRc</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/20987245">Output</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/3239AB88">OutputFormat</a></li>
-				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/CD4F1EA6">Parser</a></li>
+				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/CD4F1EA6">Parser</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/D3EA9CFB">ParserOptions</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C0DD23B8">Resolve<wbr>Plugins<wbr>Relative<wbr>To</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/18EB2A54">UseColors</a></li>
@@ -168,15 +168,15 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a>.</h3>
-	<h1>NoEslintRc <small>Property</small></h1>
+	<h1>Parser <small>Property</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Gets or Sets a value indicating whether to disable use of configuration from eslintrc.
-    <p>Option: <code class="cs">--no-eslintrc</code>.</p>
+    Gets or sets the parser to be used.
+    <p>Option: <code class="cs">--parser</code>.</p>
     </div>
 
 		<div class="panel panel-default">
@@ -194,7 +194,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public bool NoEslintRc { get; set; }</code></pre>
+	<pre><code>public string Parser { get; set; }</code></pre>
 
 
 
@@ -211,7 +211,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>bool</td>
+					<td>string</td>
 					<td></td>
 				</tr>
 			</tbody></table>
