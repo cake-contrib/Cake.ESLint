@@ -46,28 +46,70 @@ namespace Cake.ESLint
 
         /// <summary>
         /// Gets or Sets a value indicating whether to disable use of configuration from eslintrc.
+        /// <para>Option: <c>--no-eslintrc</c>.</para>
         /// </summary>
         public bool NoEslintRc { get; set; }
 
         /// <summary>
         /// Gets or sets the Output file.
+        /// <para>Option: <c>--output</c>.</para>
         /// </summary>
         public FilePath Output { get; set; }
 
         /// <summary>
         /// Gets or sets whether to force the using of colors.
+        /// <para>Option: <c>--color</c> or <c>--no-color</c>.</para>
         /// </summary>
         public bool? UseColors { get; set; }
 
         /// <summary>
         /// Gets or sets output Format.
+        /// <para>Option: <c>--format</c>.</para>
         /// </summary>
         public ESLintOutputFormat OutputFormat { get; set; }
 
         /// <summary>
-        /// Gets the list of Files to lint.
+        /// Gets or sets a path to a config file.
+        /// <para>Option: <c>--config</c>.</para>
         /// </summary>
-        public IList<FilePath> Files { get; }
+        public FilePath Config { get; set; }
+
+        /// <summary>
+        /// Gets or sets the environments.
+        /// <para></para>
+        /// <para>Option: <c>--env</c>.</para>
+        /// </summary>
+        public IEnumerable<string> Environments { get; set; }
+
+        /// <summary>
+        /// Gets or sets JavaScript file extensions.
+        /// <para>Option: <c>--ext</c>.</para>
+        /// </summary>
+        public IEnumerable<string> Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets global variables.
+        /// <para>Option: <c>--global</c>.</para>
+        /// </summary>
+        public IEnumerable<string> Globals { get; set; }
+
+        /// <summary>
+        /// Gets or sets the parser to be used.
+        /// <para>Option: <c>--parser</c>.</para>
+        /// </summary>
+        public string Parser { get; set; }
+
+        /// <summary>
+        /// Gets or sets the parser options.
+        /// <para>Option: <c>--parser-options</c>.</para>
+        /// </summary>
+        public IEnumerable<string> ParserOptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets a folder where plugins should be resolved from.
+        /// <para>Option: <c>--resolve-plugins-relative-to</c>.</para>
+        /// </summary>
+        public DirectoryPath ResolvePluginsRelativeTo { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
@@ -82,8 +124,13 @@ namespace Cake.ESLint
         public bool ContinueOnErrors { get; set; }
 
         /// <summary>
-        /// Gets the list of directories to lint.
+        /// Gets or sets the list of Files to lint.
         /// </summary>
-        public IList<DirectoryPath> Directories { get; }
+        public IEnumerable<FilePath> Files { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of directories to lint.
+        /// </summary>
+        public IEnumerable<DirectoryPath> Directories { get; set; }
     }
 }

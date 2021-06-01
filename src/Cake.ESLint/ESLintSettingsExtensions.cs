@@ -1,4 +1,4 @@
-/*
+﻿/*
  * MIT License
  *
  * Copyright (c) 2021 Nils Andresen
@@ -22,52 +22,23 @@
  * SOFTWARE.
  */
 
-using System.Threading.Tasks;
-
 using Cake.Core.IO;
-using Cake.ESLint.Tests.Fixtures;
 
-using VerifyXunit;
-
-using Xunit;
-
-namespace Cake.ESLint.Tests
+namespace Cake.ESLint
 {
-    [UsesVerify]
-    public class ESLintAliasesTests
+    /// <summary>
+    /// Convenient extensions for <see cref="ESLintSettings"/>.
+    /// </summary>
+    public static class ESLintSettingsExtensions
     {
-        private readonly ESLintAliasesFixture fixture;
-
-        public ESLintAliasesTests()
+        /// <summary>
+        /// Sets <see cref="ESLintSettings.Parser"/> to a FilePath.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="pathToPlugin">The <see cref="FilePath"/> to set.</param>
+        public static void SetParser(this ESLintSettings @this, FilePath pathToPlugin)
         {
-            fixture = new ESLintAliasesFixture();
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_no_settings()
-        {
-            fixture.Settings = null;
-
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_given_settings()
-        {
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
-        }
-
-        [Fact]
-        public async Task Runs_tool_with_given_action()
-        {
-            fixture.Action = x => x.Files = new[] {new FilePath("**/*")};
-            var result = fixture.Run();
-
-            await Verifier.Verify(result);
+            @this.Parser = pathToPlugin.FullPath;
         }
     }
 }

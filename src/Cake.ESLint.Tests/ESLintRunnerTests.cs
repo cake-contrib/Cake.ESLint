@@ -149,8 +149,7 @@ namespace Cake.ESLint.Tests
         [Fact]
         public void Should_add_inputFiles_when_Files_is_set()
         {
-            fixture.Settings.Files.Add("foo");
-            fixture.Settings.Files.Add("bar");
+            fixture.Settings.Files = new[] {new FilePath("foo"), new FilePath("bar")};
 
             var actual = fixture.Run();
 
@@ -160,8 +159,7 @@ namespace Cake.ESLint.Tests
         [Fact]
         public void Should_add_inputDirectories_when_Directories_is_set()
         {
-            fixture.Settings.Directories.Add("foo");
-            fixture.Settings.Directories.Add("bar");
+            fixture.Settings.Directories = new[] {new DirectoryPath("foo"), new DirectoryPath("bar")};
 
             var actual = fixture.Run();
 
@@ -182,23 +180,103 @@ namespace Cake.ESLint.Tests
             warnings.Single().Message.ShouldContain("There were errors while linting");
         }
 
+        [Fact]
+        public void Should_add_config_arg_when_config_is_set()
+        {
+            fixture.Settings.Config = new FilePath("/some/totally/different/.eslintrc");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--config \"/some/totally/different/.eslintrc\"");
+        }
+
+        [Fact]
+        public void Should_add_env_args_when_environment_is_set()
+        {
+            fixture.Settings.Environments = new[] {"dev", "prod"};
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--env dev --env prod");
+        }
+
+        [Fact]
+        public void Should_add_ext_args_when_extension_is_set()
+        {
+            fixture.Settings.Extensions = new[] {"ts", "tsx"};
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--ext ts --ext tsx");
+        }
+
+        [Fact]
+        public void Should_add_global_args_when_globals_is_set()
+        {
+            fixture.Settings.Globals = new[] {"require", "exports:true"};
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--global require --global exports:true");
+        }
+
+        [Fact]
+        public void Should_add_parser_arg_when_parser_is_set()
+        {
+            fixture.Settings.Parser = "espree";
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--parser \"espree\"");
+        }
+
+        [Fact]
+        public void Should_add_parser_arg_when_parser_is_set_from_filePath()
+        {
+            fixture.Settings.SetParser(new FilePath("/some/custom/parser.js"));
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--parser \"/some/custom/parser.js\"");
+        }
+
+        [Fact]
+        public void Should_add_parser_options_args_when_parserOptions_is_set()
+        {
+            fixture.Settings.ParserOptions = new []{ "ecmaVersion:7" };
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--parser-options ecmaVersion:7");
+        }
+
+        [Fact]
+        public void Should_add_resolve_plugins_relative_to_arg_when_resolvePluginsRelativeTo_is_set()
+        {
+            fixture.Settings.ResolvePluginsRelativeTo = new DirectoryPath("../plugins");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--resolve-plugins-relative-to \"../plugins\"");
+        }
+
         // ReSharper disable once ClassNeverInstantiated.Local
         private class OutputFormatDataGenerator : IEnumerable<object[]>
         {
             private readonly List<object[]> data = new List<object[]>
             {
-                new object[] { ESLintOutputFormat.Checkstyle, "checkstyle" },
-                new object[] { ESLintOutputFormat.Codeframe, "codeframe" },
-                new object[] { ESLintOutputFormat.Compact, "compact" },
-                new object[] { ESLintOutputFormat.Html, "html" },
-                new object[] { ESLintOutputFormat.Json, "json" },
-                new object[] { ESLintOutputFormat.Junit, "junit" },
-                new object[] { ESLintOutputFormat.Stylish, "stylish" },
-                new object[] { ESLintOutputFormat.Table, "table" },
-                new object[] { ESLintOutputFormat.Tap, "tap" },
-                new object[] { ESLintOutputFormat.Unix, "unix" },
-                new object[] { ESLintOutputFormat.JslintXml, "jslint-xml" },
-                new object[] { ESLintOutputFormat.VisualStudio, "visualstudio" },
+                new object[] {ESLintOutputFormat.Checkstyle, "checkstyle"},
+                new object[] {ESLintOutputFormat.Codeframe, "codeframe"},
+                new object[] {ESLintOutputFormat.Compact, "compact"},
+                new object[] {ESLintOutputFormat.Html, "html"},
+                new object[] {ESLintOutputFormat.Json, "json"},
+                new object[] {ESLintOutputFormat.Junit, "junit"},
+                new object[] {ESLintOutputFormat.Stylish, "stylish"},
+                new object[] {ESLintOutputFormat.Table, "table"},
+                new object[] {ESLintOutputFormat.Tap, "tap"},
+                new object[] {ESLintOutputFormat.Unix, "unix"},
+                new object[] {ESLintOutputFormat.JslintXml, "jslint-xml"},
+                new object[] {ESLintOutputFormat.VisualStudio, "visualstudio"},
             };
 
             public IEnumerator<object[]> GetEnumerator() => data.GetEnumerator();

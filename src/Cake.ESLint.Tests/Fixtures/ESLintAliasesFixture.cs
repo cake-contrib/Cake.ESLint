@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+using System;
+
 using Cake.Core;
 using Cake.Core.IO;
 
@@ -51,11 +53,13 @@ namespace Cake.ESLint.Tests.Fixtures
                 Configuration);
         }
 
+        internal Action<ESLintSettings> Action { get; set; }
+
         protected override void RunTool()
         {
             if (Settings == null)
             {
-                context.ESLint();
+                context.ESLint(Action);
             }
             else
             {

@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+using System;
+
 using Cake.Core;
 using Cake.Core.Annotations;
 
@@ -78,10 +80,13 @@ namespace Cake.ESLint
         /// <seealso cref="ESLint(Cake.Core.ICakeContext, ESLintSettings)"/>
         /// </summary>
         /// <param name="context">The <see cref="ICakeContext"/>.</param>
+        /// <param name="modification">The modifications to the <see cref="ESLintSettings"/>.</param>
         [CakeMethodAlias]
-        public static void ESLint(this ICakeContext context)
+        public static void ESLint(this ICakeContext context, Action<ESLintSettings> modification = null)
         {
-            ESLint(context, new ESLintSettings());
+            var settings = new ESLintSettings();
+            modification?.Invoke(settings);
+            ESLint(context, settings);
         }
 
         /// <summary>
