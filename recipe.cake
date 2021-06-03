@@ -1,5 +1,8 @@
 #load nuget:?package=Cake.Recipe&version=2.2.1
 
+// Workaround for https://github.com/cake-contrib/Cake.Recipe/issues/854
+#tool nuget:?package=NuGet.CommandLine&version=5.8.1
+
 Environment.SetVariableNames();
 
 BuildParameters.SetParameters(
