@@ -41,9 +41,7 @@ namespace Cake.ESLint
     /// </para>
     /// <para>
     /// Another option is, if you have an npm project setup, to add ESLint to
-    /// package.json and call NpmInstall to be sure it it available.
-    /// <see href="https://cake-contrib.github.io/Cake.Npm.Module/">Cake.Npm.Module</see> to install
-    /// <see href="https://www.npmjs.com/package/eslint">ESLint from npmjs.com</see>.
+    /// package.json and call NpmInstall() to be sure it is available.
     /// </para>
     /// <para>
     /// Example:
