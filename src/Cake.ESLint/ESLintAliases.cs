@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+using System;
+
 using Cake.Core;
 using Cake.Core.Annotations;
 
@@ -57,14 +59,13 @@ namespace Cake.ESLint
     ///     });
     ///
     ///     // run lint
-    ///     var settings = new ESLintSettings {
-    ///       WorkingDirectory = "src",
-    ///       Output = "../output.json", // relative from WorkingDirectory
-    ///       OutputFormat = ESLintOutputFormat.Json,
-    ///       ContinueOnErrors = true
-    ///     };
-    ///     settings.Directories.Add("."); // again, relative from WorkingDirectory
-    ///     ESLint(settings);
+    ///     ESLint(x => {
+    ///         x.WorkingDirectory = "src2";
+    ///         x.Output = "../output.json"; // relative to WorkingDirectory
+    ///         x.OutputFormat = ESLintOutputFormat.Json;
+    ///         x.ContinueOnErrors = true;
+    ///         x.AddDirectory("."); // relative to WorkingDirectory
+    ///      });
     ///   });
     /// ]]>
     /// </code>
@@ -78,10 +79,13 @@ namespace Cake.ESLint
         /// <seealso cref="ESLint(Cake.Core.ICakeContext, ESLintSettings)"/>
         /// </summary>
         /// <param name="context">The <see cref="ICakeContext"/>.</param>
+        /// <param name="modification">The modifications to the <see cref="ESLintSettings"/>.</param>
         [CakeMethodAlias]
-        public static void ESLint(this ICakeContext context)
+        public static void ESLint(this ICakeContext context, Action<ESLintSettings> modification = null)
         {
-            ESLint(context, new ESLintSettings());
+            var settings = new ESLintSettings();
+            modification?.Invoke(settings);
+            ESLint(context, settings);
         }
 
         /// <summary>

@@ -29,6 +29,9 @@ namespace Cake.ESLint
 {
     /// <summary>
     /// This namespace contain types used for operations using the ESLint tool wrapper.
+    /// <para>
+    /// See <see cref="ESLintAliases"/> for samples.
+    /// </para>
     /// </summary>
     [CompilerGenerated]
     internal class NamespaceDoc
