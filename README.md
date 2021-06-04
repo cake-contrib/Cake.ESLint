@@ -2,7 +2,7 @@
 
 [![standard-readme compliant][]][standard-readme]
 [![All Contributors][all-contributorsimage]](#contributors)
-[![Appveyor build][appveyorimage]][appveyor]
+[![Build][githubimage]][githubbuild]
 [![Codecov Report][codecovimage]][codecov]
 [![NuGet package][nugetimage]][nuget]
 
@@ -81,8 +81,8 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [all-contributorsimage]: https://img.shields.io/github/all-contributors/cake-contrib/Cake.ESLint.svg?color=orange&style=flat-square
-[appveyor]: https://ci.appveyor.com/project/nilsa/cake-eslint
-[appveyorimage]: https://img.shields.io/appveyor/ci/nilsa/cake-eslint.svg?logo=appveyor&style=flat-square
+[githubbuild]: https://github.com/cake-contrib/Cake.ESLint/actions/workflows/build.yml?query=branch%3Adevelop
+[githubimage]: https://github.com/cake-contrib/Cake.ESLint/actions/workflows/build.yml/badge.svg?branch=develop
 [codecov]: https://codecov.io/gh/cake-contrib/Cake.ESLint
 [codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.ESLint.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
