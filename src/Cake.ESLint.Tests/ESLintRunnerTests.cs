@@ -237,7 +237,7 @@ namespace Cake.ESLint.Tests
 
             var actual = fixture.Run();
 
-            actual.Args.ShouldContain("--global require --global exports:true");
+            actual.Args.ShouldContain("--global \"require\" --global \"exports:true\"");
         }
 
         [Fact]
@@ -278,6 +278,36 @@ namespace Cake.ESLint.Tests
             var actual = fixture.Run();
 
             actual.Args.ShouldContain("--resolve-plugins-relative-to \"../plugins\"");
+        }
+
+        [Fact]
+        public void Should_add_rulesdir_arg_when_rulesDirs_is_set()
+        {
+            fixture.Settings.AddRulesDir("my-rules", "my-other-rules");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--rulesdir \"my-rules\" --rulesdir \"my-other-rules\"");
+        }
+
+        [Fact]
+        public void Should_add_plugin_arg_when_plugins_is_set()
+        {
+            fixture.Settings.AddPlugin("jquery", "eslint-plugin-mocha");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--plugin jquery --plugin eslint-plugin-mocha");
+        }
+
+        [Fact]
+        public void Should_add_rule_arg_when_Rules_is_set()
+        {
+            fixture.Settings.AddRule("guard-for-in: 2", "brace-style: [2, 1tbs]");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--rule \"guard-for-in: 2\" --rule \"brace-style: [2, 1tbs]\"");
         }
 
         // ReSharper disable once ClassNeverInstantiated.Local

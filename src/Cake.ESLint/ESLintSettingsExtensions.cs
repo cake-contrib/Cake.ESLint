@@ -67,5 +67,41 @@ namespace Cake.ESLint
             paths.AddRange(filePaths);
             @this.Files = paths;
         }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.RulesDirs"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="rulesDir">The paths to add.</param>
+        public static void AddRulesDir(this ESLintSettings @this, params DirectoryPath[] rulesDir)
+        {
+            var paths = @this.RulesDirs?.ToList() ?? new List<DirectoryPath>();
+            paths.AddRange(rulesDir);
+            @this.RulesDirs = paths;
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.Plugins"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="plugin">The plugins to add.</param>
+        public static void AddPlugin(this ESLintSettings @this, params string[] plugin)
+        {
+            var plugins = @this.Plugins?.ToList() ?? new List<string>();
+            plugins.AddRange(plugin);
+            @this.Plugins = plugins;
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.Rules"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="rule">The plugins to add.</param>
+        public static void AddRule(this ESLintSettings @this, params string[] rule)
+        {
+            var plugins = @this.Rules?.ToList() ?? new List<string>();
+            plugins.AddRange(rule);
+            @this.Rules = plugins;
+        }
     }
 }
