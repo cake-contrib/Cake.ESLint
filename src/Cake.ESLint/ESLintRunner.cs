@@ -158,7 +158,7 @@ namespace Cake.ESLint
 
             foreach (var global in settings.Globals.EnsureNotNull())
             {
-                builder.AppendSwitch("--global", global);
+                builder.AppendSwitchQuoted("--global", global);
             }
 
             if (settings.Parser != null)
@@ -176,6 +176,21 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted(
                     "--resolve-plugins-relative-to",
                     settings.ResolvePluginsRelativeTo.FullPath);
+            }
+
+            foreach (var dir in settings.RulesDirs.EnsureNotNull())
+            {
+                builder.AppendSwitchQuoted("--rulesdir", dir.FullPath);
+            }
+
+            foreach (var plugin in settings.Plugins.EnsureNotNull())
+            {
+                builder.AppendSwitch("--plugin", plugin);
+            }
+
+            foreach (var rule in settings.Rules.EnsureNotNull())
+            {
+                builder.AppendSwitchQuoted("--rule", rule);
             }
 
             // render arguments

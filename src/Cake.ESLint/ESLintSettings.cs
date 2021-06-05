@@ -112,6 +112,24 @@ namespace Cake.ESLint
         public DirectoryPath ResolvePluginsRelativeTo { get; set; }
 
         /// <summary>
+        /// Gets or sets a folder where additional rules are located.
+        /// <para>Option: <c>--rulesdir</c>.</para>
+        /// </summary>
+        public IEnumerable<DirectoryPath> RulesDirs { get; set; }
+
+        /// <summary>
+        /// Gets or sets the plugins to use.
+        /// <para>Option: <c>--plugin</c>.</para>
+        /// </summary>
+        public IEnumerable<string> Plugins { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Rule(s).
+        /// <para>Option: <c>--rule</c>.</para>
+        /// </summary>
+        public IEnumerable<string> Rules { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the
