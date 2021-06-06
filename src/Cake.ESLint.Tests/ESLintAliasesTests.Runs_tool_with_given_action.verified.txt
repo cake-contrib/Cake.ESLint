@@ -9,6 +9,9 @@
     ]
   },
   Process: {
+    Arguments: [
+      {}
+    ],
     WorkingDirectory: {
       FullPath: /Working,
       Separator: "/",
@@ -17,5 +20,5 @@
       ]
     }
   },
-  Args: 
+  Args: "**/*"
 }
