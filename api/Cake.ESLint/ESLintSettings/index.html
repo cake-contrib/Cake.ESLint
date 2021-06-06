@@ -138,6 +138,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintAliases">ESLintAliases</a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintFixType">ESLintFixType</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat">ESLintOutputFormat</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintRunner">ESLintRunner</a></li>
 				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a></li>
@@ -308,6 +309,36 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/9598DEDD">Fix</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether to fix problems.
+    <p>Option: <code class="cs">--fix</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/BA0D53C8">FixDryRun</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether to fix problems without saving the changes to the file system.
+    <p>Option: <code class="cs">--fix-dry-run</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7764624A">FixTypes</a></td>
+								<td>IEnumerable<wbr>&lt;<a href="/Cake.ESLint/api/Cake.ESLint/ESLintFixType">ESLintFixType</a>&gt;<wbr></td>
+								<td>
+									<div>
+    Gets or sets the types of fixes to apply.
+    <p>Option: <code class="cs">--fix-dry-run</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/1D2A0743">Globals</a></td>
 								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
 								<td>
@@ -451,6 +482,16 @@ class Type type-node
 								<td>
 									<div>
     adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C01E9279">Files</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/6C5CD6A4">AddFixType<wbr>(ESLintFixType[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7764624A">FixTypes</a></code>.
     </div>
 										<div><small><em>From <a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></em></small></div>
 								</td>
