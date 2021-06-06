@@ -60,6 +60,16 @@ namespace Cake.ESLint.Tests
         }
 
         [Fact]
+        public void Should_Throw_If_Log_Is_Null()
+        {
+            fixture.Log = null;
+
+            Action result = () => fixture.Run();
+
+            result.ShouldThrow<ArgumentException>();
+        }
+
+        [Fact]
         public void Should_Throw_If_ESLint_Executable_Was_Not_Found()
         {
             fixture.GivenDefaultToolDoNotExist();
@@ -74,6 +84,18 @@ namespace Cake.ESLint.Tests
 
         [Fact]
         public void Should_use_local_eslint_from_nodeModules_if_exists()
+        {
+            fixture.GivenDefaultToolDoNotExist();
+            var expected = fixture.GivenFileExists("/some/project/node_modules/.bin/eslint");
+            fixture.Settings.WorkingDirectory = "/some/project";
+
+            var actual = fixture.Run();
+
+            actual.Path.FullPath.ShouldBe(expected.Path.FullPath);
+        }
+
+        [Fact]
+        public void Should_use_eslint_cmd_on_windows()
         {
             fixture.GivenDefaultToolDoNotExist();
             var expected = fixture.GivenFileExists("/some/project/node_modules/.bin/eslint");
@@ -291,9 +313,31 @@ namespace Cake.ESLint.Tests
         }
 
         [Fact]
+        public void Should_add_rulesdir_arg_when_rulesDirs_is_set_multiple_times()
+        {
+            fixture.Settings.AddRulesDir("my-rules");
+            fixture.Settings.AddRulesDir("my-other-rules");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--rulesdir \"my-rules\" --rulesdir \"my-other-rules\"");
+        }
+
+        [Fact]
         public void Should_add_plugin_arg_when_plugins_is_set()
         {
             fixture.Settings.AddPlugin("jquery", "eslint-plugin-mocha");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--plugin jquery --plugin eslint-plugin-mocha");
+        }
+
+        [Fact]
+        public void Should_add_plugin_arg_when_plugins_is_set_multiple_times()
+        {
+            fixture.Settings.AddPlugin("jquery");
+            fixture.Settings.AddPlugin("eslint-plugin-mocha");
 
             var actual = fixture.Run();
 
@@ -308,6 +352,57 @@ namespace Cake.ESLint.Tests
             var actual = fixture.Run();
 
             actual.Args.ShouldContain("--rule \"guard-for-in: 2\" --rule \"brace-style: [2, 1tbs]\"");
+        }
+
+        [Fact]
+        public void Should_add_rule_arg_when_Rules_is_set_multiple_times()
+        {
+            fixture.Settings.AddRule("guard-for-in: 2");
+            fixture.Settings.AddRule("brace-style: [2, 1tbs]");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--rule \"guard-for-in: 2\" --rule \"brace-style: [2, 1tbs]\"");
+        }
+
+        [Fact]
+        public void Should_add_fix_arg_when_Fix_is_set()
+        {
+            fixture.Settings.Fix = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--fix");
+        }
+
+        [Fact]
+        public void Should_add_fix_dry_run_arg_when_FixDryRun_is_set()
+        {
+            fixture.Settings.FixDryRun = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--fix-dry-run");
+        }
+
+        [Fact]
+        public void Should_add_fix_type_arg_when_FixType_is_set()
+        {
+            fixture.Settings.AddFixType(ESLintFixType.Layout);
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--fix-type layout");
+        }
+
+        [Fact]
+        public void Should_add_fix_type_arg_when_FixType_is_set_with_multiple_flags()
+        {
+            fixture.Settings.AddFixType(ESLintFixType.Problem, ESLintFixType.Suggestion);
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--fix-type problem --fix-type suggestion");
         }
 
         // ReSharper disable once ClassNeverInstantiated.Local

@@ -64,6 +64,7 @@ namespace Cake.ESLint.Tests
         [Fact]
         public async Task Runs_tool_with_given_action()
         {
+            fixture.Settings = null;
             fixture.Action = x => x.Files = new[] {new FilePath("**/*")};
             var result = fixture.Run();
 

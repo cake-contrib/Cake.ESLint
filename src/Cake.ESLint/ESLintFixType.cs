@@ -1,4 +1,4 @@
-/*
+﻿/*
  * MIT License
  *
  * Copyright (c) 2021 Nils Andresen
@@ -22,36 +22,38 @@
  * SOFTWARE.
  */
 
-using Cake.Core.IO;
-using Cake.Testing;
-using Cake.Testing.Fixtures;
+using System;
 
-namespace Cake.ESLint.Tests.Fixtures
+namespace Cake.ESLint
 {
-    public class ESLintRunnerFixture : ToolFixture<ESLintSettings>
+    /// <summary>
+    /// Options for <c>--fix-type</c>.
+    /// </summary>
+    public sealed class ESLintFixType
     {
-        public ESLintRunnerFixture()
-            : base("eslint")
+        private ESLintFixType(string name)
         {
-            Log = new FakeLog();
+            this.Name = name;
         }
 
-        internal FakeLog Log { get; set; }
+        /// <summary>
+        /// Gets the fix-type: Problem.
+        /// </summary>
+        public static ESLintFixType Problem { get; } = new ESLintFixType("problem");
 
-        protected override void RunTool()
-        {
-            var tool = new ESLintRunner(FileSystem, Environment, ProcessRunner, Tools, Log);
-            tool.Run(Settings);
-        }
+        /// <summary>
+        /// Gets the fix-type: Suggestion.
+        /// </summary>
+        public static ESLintFixType Suggestion { get; } = new ESLintFixType("suggestion");
 
-        public IFile GivenFileExists(FilePath file)
-        {
-            return FileSystem.CreateFile(file);
-        }
+        /// <summary>
+        /// Gets the fix-type: Layout.
+        /// </summary>
+        public static ESLintFixType Layout { get; } = new ESLintFixType("layout");
 
-        public void GivenToolExitsWithCode(int exitCode)
-        {
-            ProcessRunner.Process.SetExitCode(exitCode);
-        }
+        /// <summary>
+        /// Gets the name of the problem.
+        /// </summary>
+        public string Name { get; }
     }
 }

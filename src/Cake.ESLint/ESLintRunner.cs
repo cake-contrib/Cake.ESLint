@@ -193,6 +193,21 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted("--rule", rule);
             }
 
+            if (settings.Fix)
+            {
+                builder.Append("--fix");
+            }
+
+            if (settings.FixDryRun)
+            {
+                builder.Append("--fix-dry-run");
+            }
+
+            foreach (var type in settings.FixTypes.EnsureNotNull())
+            {
+                builder.AppendSwitch("--fix-type", type.Name);
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {
