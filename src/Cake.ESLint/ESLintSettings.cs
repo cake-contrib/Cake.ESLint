@@ -130,6 +130,44 @@ namespace Cake.ESLint
         public IEnumerable<string> Rules { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to fix problems.
+        /// <para>Option: <c>--fix</c>.</para>
+        /// </summary>
+        public bool Fix { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to fix problems without saving the changes to the file system.
+        /// <para>Option: <c>--fix-dry-run</c>.</para>
+        /// </summary>
+        public bool FixDryRun { get; set; }
+
+        /// <summary>
+        /// Gets or sets the types of fixes to apply.
+        /// <para>Option: <c>--fix-types</c>.</para>
+        /// </summary>
+        public IEnumerable<ESLintFixType> FixTypes { get; set; }
+
+        /// <summary>
+        /// Gets or sets the path to the ignoreFile.
+        /// <para>Option: <c>--ignore-path</c>.</para>
+        /// </summary>
+        public FilePath IgnorePath { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to disable use of ignore files and patterns.
+        /// <para>Option: <c>--no-ignore</c>.</para>
+        /// </summary>
+        public bool NoIgnore { get; set; }
+
+        /// <summary>
+        /// Gets or sets patterns of files to ignore
+        /// (in addition to those in .eslintignore).
+        /// <para>Option: <c>--ignore-pattern</c>.</para>
+        /// </summary>
+        public IEnumerable<string> IgnorePatterns { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the

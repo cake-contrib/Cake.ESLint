@@ -22,6 +22,7 @@
  * SOFTWARE.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -51,9 +52,10 @@ namespace Cake.ESLint
         /// <param name="directoryPaths">The paths to add.</param>
         public static void AddDirectory(this ESLintSettings @this, params DirectoryPath[] directoryPaths)
         {
-            var paths = @this.Directories?.ToList() ?? new List<DirectoryPath>();
-            paths.AddRange(directoryPaths);
-            @this.Directories = paths;
+            @this.AddToList(
+                x => x.Directories,
+                (x, y) => x.Directories = y,
+                directoryPaths);
         }
 
         /// <summary>
@@ -63,9 +65,10 @@ namespace Cake.ESLint
         /// <param name="filePaths">The paths to add.</param>
         public static void AddFile(this ESLintSettings @this, params FilePath[] filePaths)
         {
-            var paths = @this.Files?.ToList() ?? new List<FilePath>();
-            paths.AddRange(filePaths);
-            @this.Files = paths;
+            @this.AddToList(
+                x => x.Files,
+                (x, y) => x.Files = y,
+                filePaths);
         }
 
         /// <summary>
@@ -75,9 +78,10 @@ namespace Cake.ESLint
         /// <param name="rulesDir">The paths to add.</param>
         public static void AddRulesDir(this ESLintSettings @this, params DirectoryPath[] rulesDir)
         {
-            var paths = @this.RulesDirs?.ToList() ?? new List<DirectoryPath>();
-            paths.AddRange(rulesDir);
-            @this.RulesDirs = paths;
+            @this.AddToList(
+                x => x.RulesDirs,
+                (x, y) => x.RulesDirs = y,
+                rulesDir);
         }
 
         /// <summary>
@@ -87,9 +91,10 @@ namespace Cake.ESLint
         /// <param name="plugin">The plugins to add.</param>
         public static void AddPlugin(this ESLintSettings @this, params string[] plugin)
         {
-            var plugins = @this.Plugins?.ToList() ?? new List<string>();
-            plugins.AddRange(plugin);
-            @this.Plugins = plugins;
+            @this.AddToList(
+                x => x.Plugins,
+                (x, y) => x.Plugins = y,
+                plugin);
         }
 
         /// <summary>
@@ -99,9 +104,61 @@ namespace Cake.ESLint
         /// <param name="rule">The plugins to add.</param>
         public static void AddRule(this ESLintSettings @this, params string[] rule)
         {
-            var plugins = @this.Rules?.ToList() ?? new List<string>();
-            plugins.AddRange(rule);
-            @this.Rules = plugins;
+            @this.AddToList(
+                x => x.Rules,
+                (x, y) => x.Rules = y,
+                rule);
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.FixTypes"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="fixType">The FixType to add.</param>
+        public static void AddFixType(this ESLintSettings @this, params ESLintFixType[] fixType)
+        {
+            @this.AddToList(
+                x => x.FixTypes,
+                (x, y) => x.FixTypes = y,
+                fixType);
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.IgnorePatterns"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="pattern">The pattern to add.</param>
+        public static void AddIgnorePattern(this ESLintSettings @this, params FilePath[] pattern)
+        {
+            @this.AddToList(
+                x => x.IgnorePatterns,
+                (x, y) => x.IgnorePatterns = y,
+                pattern.Select(x => x.FullPath));
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.IgnorePatterns"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="pattern">The pattern to add.</param>
+        public static void AddIgnorePattern(this ESLintSettings @this, params DirectoryPath[] pattern)
+        {
+            // For directories we ensure a trailing "/" at the end of the pattern.
+            @this.AddToList(
+                x => x.IgnorePatterns,
+                (x, y) => x.IgnorePatterns = y,
+                pattern.Select(x => x.FullPath + x.Separator));
+        }
+
+        private static void AddToList<T>(
+            this ESLintSettings @this,
+            Func<ESLintSettings, IEnumerable<T>> getter,
+            Action<ESLintSettings, IEnumerable<T>> setter,
+            IEnumerable<T> toAdd)
+        {
+            var existing = getter(@this)?.ToList() ?? new List<T>();
+            existing.AddRange(toAdd);
+            setter(@this, existing);
         }
     }
 }

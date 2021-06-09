@@ -193,6 +193,36 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted("--rule", rule);
             }
 
+            if (settings.Fix)
+            {
+                builder.Append("--fix");
+            }
+
+            if (settings.FixDryRun)
+            {
+                builder.Append("--fix-dry-run");
+            }
+
+            foreach (var type in settings.FixTypes.EnsureNotNull())
+            {
+                builder.AppendSwitch("--fix-type", type.Name);
+            }
+
+            if (settings.IgnorePath != null)
+            {
+                builder.AppendSwitchQuoted("--ignore-path", settings.IgnorePath.FullPath);
+            }
+
+            if (settings.NoIgnore)
+            {
+                builder.Append("--no-ignore");
+            }
+
+            foreach (var pattern in settings.IgnorePatterns.EnsureNotNull())
+            {
+                builder.AppendSwitchQuoted("--ignore-pattern", pattern);
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {
