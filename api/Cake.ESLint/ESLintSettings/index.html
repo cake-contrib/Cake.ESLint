@@ -334,7 +334,7 @@ class Type type-node
 								<td>
 									<div>
     Gets or sets the types of fixes to apply.
-    <p>Option: <code class="cs">--fix-dry-run</code>.</p>
+    <p>Option: <code class="cs">--fix-types</code>.</p>
     </div>
 								</td>
 							</tr>
@@ -349,12 +349,44 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/D299AB50">IgnorePath</a></td>
+								<td>FilePath</td>
+								<td>
+									<div>
+    Gets or sets the path to the ignoreFile.
+    <p>Option: <code class="cs">--ignore-path</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/84BEACB5">IgnorePatterns</a></td>
+								<td>IEnumerable<wbr>&lt;string&gt;<wbr></td>
+								<td>
+									<div>
+    Gets or sets patterns of files to ignore
+    (in addition to those in .eslintignore).
+    <p>Option: <code class="cs">--ignore-pattern</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/4692F4AF">NoEslintRc</a></td>
 								<td>bool</td>
 								<td>
 									<div>
     Gets or Sets a value indicating whether to disable use of configuration from eslintrc.
     <p>Option: <code class="cs">--no-eslintrc</code>.</p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/0AE613F8">NoIgnore</a></td>
+								<td>bool</td>
+								<td>
+									<div>
+    Gets or sets a value indicating whether
+    to disable use of ignore files and patterns.
+    <p>Option: <code class="cs">--no-ignore</code>.</p>
     </div>
 								</td>
 							</tr>
@@ -492,6 +524,26 @@ class Type type-node
 								<td>
 									<div>
     adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7764624A">FixTypes</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/F25FE766">AddIgnorePattern<wbr>(DirectoryPath[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/84BEACB5">IgnorePatterns</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/509095BC">AddIgnorePattern<wbr>(FilePath[])<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/84BEACB5">IgnorePatterns</a></code>.
     </div>
 										<div><small><em>From <a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></em></small></div>
 								</td>

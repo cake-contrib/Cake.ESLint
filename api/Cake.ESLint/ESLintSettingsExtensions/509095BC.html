@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.ESLint - API - ESLintSettingsExtensions.AddDirectory(ESLintSettings, DirectoryPath[]) Method</title>
+        <title>Cake.ESLint - API - ESLintSettingsExtensions.AddIgnorePattern(ESLintSettings, FilePath[]) Method</title>
         <link href="/Cake.ESLint/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -138,10 +138,10 @@
 		<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/C7F994A5">AddDirectory<wbr>(ESLintSettings, <wbr>DirectoryPath[])<wbr></a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/C7F994A5">AddDirectory<wbr>(ESLintSettings, <wbr>DirectoryPath[])<wbr></a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/76391FA1">AddFile<wbr>(ESLintSettings, <wbr>FilePath[])<wbr></a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/6C5CD6A4">AddFixType<wbr>(ESLintSettings, <wbr>ESLintFixType[])<wbr></a></li>
-				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/509095BC">AddIgnorePattern<wbr>(ESLintSettings, <wbr>FilePath[])<wbr></a></li>
+				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/509095BC">AddIgnorePattern<wbr>(ESLintSettings, <wbr>FilePath[])<wbr></a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/F25FE766">AddIgnorePattern<wbr>(ESLintSettings, <wbr>DirectoryPath[])<wbr></a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/7DC5A8B0">AddPlugin<wbr>(ESLintSettings, <wbr>string[])<wbr></a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions/EAC47B1A">AddRule<wbr>(ESLintSettings, <wbr>string[])<wbr></a></li>
@@ -162,14 +162,14 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions">E<wbr>S<wbr>Lint<wbr>Settings<wbr>Extensions</a>.</h3>
-	<h1>AddDirectory<wbr>(ESLintSettings, <wbr>DirectoryPath[])<wbr> <small>Method</small></h1>
+	<h1>AddIgnorePattern<wbr>(ESLintSettings, <wbr>FilePath[])<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7FD844B4">Directories</a></code>.
+    adds to <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/84BEACB5">IgnorePatterns</a></code>.
     </div>
 
 		<div class="panel panel-default">
@@ -187,7 +187,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static void AddDirectory(this ESLintSettings this, params DirectoryPath[] directoryPaths)</code></pre>
+	<pre><code>public static void AddIgnorePattern(this ESLintSettings this, params FilePath[] pattern)</code></pre>
 
 
 
@@ -210,9 +210,9 @@
 						<td>The <code class="cs"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a></code>.</td>
 					</tr>
 					<tr>
-						<td>directoryPaths</td>
-						<td>DirectoryPath[]</td>
-						<td>The paths to add.</td>
+						<td>pattern</td>
+						<td>FilePath[]</td>
+						<td>The pattern to add.</td>
 					</tr>
 			</tbody></table>
 		</div>
