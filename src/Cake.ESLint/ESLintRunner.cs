@@ -208,6 +208,21 @@ namespace Cake.ESLint
                 builder.AppendSwitch("--fix-type", type.Name);
             }
 
+            if (settings.IgnorePath != null)
+            {
+                builder.AppendSwitchQuoted("--ignore-path", settings.IgnorePath.FullPath);
+            }
+
+            if (settings.NoIgnore)
+            {
+                builder.Append("--no-ignore");
+            }
+
+            foreach (var pattern in settings.IgnorePatterns.EnsureNotNull())
+            {
+                builder.AppendSwitchQuoted("--ignore-pattern", pattern);
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {

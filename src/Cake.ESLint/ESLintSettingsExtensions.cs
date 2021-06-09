@@ -123,6 +123,33 @@ namespace Cake.ESLint
                 fixType);
         }
 
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.IgnorePatterns"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="pattern">The pattern to add.</param>
+        public static void AddIgnorePattern(this ESLintSettings @this, params FilePath[] pattern)
+        {
+            @this.AddToList(
+                x => x.IgnorePatterns,
+                (x, y) => x.IgnorePatterns = y,
+                pattern.Select(x => x.FullPath));
+        }
+
+        /// <summary>
+        /// adds to <see cref="ESLintSettings.IgnorePatterns"/>.
+        /// </summary>
+        /// <param name="this">The <see cref="ESLintSettings"/>.</param>
+        /// <param name="pattern">The pattern to add.</param>
+        public static void AddIgnorePattern(this ESLintSettings @this, params DirectoryPath[] pattern)
+        {
+            // For directories we ensure a trailing "/" at the end of the pattern.
+            @this.AddToList(
+                x => x.IgnorePatterns,
+                (x, y) => x.IgnorePatterns = y,
+                pattern.Select(x => x.FullPath + x.Separator));
+        }
+
         private static void AddToList<T>(
             this ESLintSettings @this,
             Func<ESLintSettings, IEnumerable<T>> getter,
