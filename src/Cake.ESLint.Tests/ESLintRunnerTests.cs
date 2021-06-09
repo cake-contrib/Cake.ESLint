@@ -405,6 +405,37 @@ namespace Cake.ESLint.Tests
             actual.Args.ShouldContain("--fix-type problem --fix-type suggestion");
         }
 
+        [Fact]
+        public void Should_add_ignore_path_arg_when_IgnorePath_is_set()
+        {
+            fixture.Settings.IgnorePath = "tmp/.eslintignore";
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--ignore-path \"tmp/.eslintignore\"");
+        }
+
+        [Fact]
+        public void Should_add_ignore_pattern_arg_when_IgnorePatterns_is_set()
+        {
+            fixture.Settings.AddIgnorePattern(new DirectoryPath("/lib/"));
+            fixture.Settings.AddIgnorePattern(new FilePath("/src/vendor/*"));
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--ignore-pattern \"/lib/\" --ignore-pattern \"/src/vendor/*\"");
+        }
+
+        [Fact]
+        public void Should_add_no_ignore_arg_when_NoIgnore_is_set()
+        {
+            fixture.Settings.NoIgnore = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--no-ignore");
+        }
+
         // ReSharper disable once ClassNeverInstantiated.Local
         private class OutputFormatDataGenerator : IEnumerable<object[]>
         {
