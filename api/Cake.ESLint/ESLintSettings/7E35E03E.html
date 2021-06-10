@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.ESLint - API - ESLintSettings.MaxWarnings Property</title>
+        <title>Cake.ESLint - API - ESLintSettings.Cache Property</title>
         <link href="/Cake.ESLint/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -139,7 +139,7 @@
 			<li class="header">Constructors</li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/F1AF7EB4">ESLintSettings<wbr>()<wbr></a></li>
 			<li class="header">Property Members</li>
-				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7E35E03E">Cache</a></li>
+				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7E35E03E">Cache</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/AFFF3CEC">CacheLocation</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/8933E4A6">CacheStrategy</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C2A3265D">Config</a></li>
@@ -154,7 +154,7 @@
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/1D2A0743">Globals</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/D299AB50">IgnorePath</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/84BEACB5">IgnorePatterns</a></li>
-				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/8D07DF42">MaxWarnings</a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/8D07DF42">MaxWarnings</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/4692F4AF">NoEslintRc</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/0AE613F8">NoIgnore</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/1C52E40B">NoInlineConfig</a></li>
@@ -184,15 +184,16 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a>.</h3>
-	<h1>MaxWarnings <small>Property</small></h1>
+	<h1>Cache <small>Property</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Gets or sets the number of warnings to trigger nonzero exit code.
-    <p>Option: <code class="cs">--max-warnings</code>.</p>
+    Gets or sets a value indicating whether
+    to check only hanged files.
+    <p>Option: <code class="cs">--cache</code>.</p>
     </div>
 
 		<div class="panel panel-default">
@@ -210,7 +211,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public int? MaxWarnings { get; set; }</code></pre>
+	<pre><code>public bool Cache { get; set; }</code></pre>
 
 
 
@@ -227,7 +228,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>int?</td>
+					<td>bool</td>
 					<td></td>
 				</tr>
 			</tbody></table>
