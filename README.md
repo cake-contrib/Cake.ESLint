@@ -67,6 +67,7 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 <table>
   <tr>
     <td align="center"><a href="https://github.com/nils-a"><img src="https://avatars.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=nils-a" title="Code">💻</a> <a href="#maintenance-nils-a" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/SimonCropp"><img src="https://avatars.githubusercontent.com/u/122666?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Simon Cropp</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=SimonCropp" title="Code">💻</a></td>
   </tr>
 </table>
 

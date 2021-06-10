@@ -168,6 +168,52 @@ namespace Cake.ESLint
         public IEnumerable<string> IgnorePatterns { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to report errors only.
+        /// <para>Option: <c>--quiet</c>.</para>
+        /// </summary>
+        public bool Quiet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of warnings to trigger nonzero exit code.
+        /// <para>Option: <c>--max-warnings</c>.</para>
+        /// </summary>
+        public int? MaxWarnings { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to prevent comments from changing config or rules.
+        /// <para>Option: <c>--no-inline-config</c>.</para>
+        /// </summary>
+        public bool NoInlineConfig { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to report errors for unused eslint-disable directives.
+        /// <para>Option: <c>--report-unused-disable-directives</c>.</para>
+        /// </summary>
+        public bool ReportUnusedDisableDirectives { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to check only hanged files.
+        /// <para>Option: <c>--cache</c>.</para>
+        /// </summary>
+        public bool Cache { get; set; }
+
+        /// <summary>
+        /// Gets or sets the path to the cache file or directory.
+        /// <para>Option: <c>--cache-location</c>.</para>
+        /// </summary>
+        public Path CacheLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the strategy to use for detecting changed files.
+        /// <para>Option: <c>--cache-strategy</c>.</para>
+        /// </summary>
+        public ESLintCacheStrategy CacheStrategy { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the

@@ -223,6 +223,41 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted("--ignore-pattern", pattern);
             }
 
+            if (settings.Quiet)
+            {
+                builder.Append("--quiet");
+            }
+
+            if (settings.MaxWarnings.HasValue)
+            {
+                builder.AppendSwitch("--max-warnings", settings.MaxWarnings.Value.ToString());
+            }
+
+            if (settings.NoInlineConfig)
+            {
+                builder.Append("--no-inline-config");
+            }
+
+            if (settings.ReportUnusedDisableDirectives)
+            {
+                builder.Append("--report-unused-disable-directives");
+            }
+
+            if (settings.Cache)
+            {
+                builder.Append("--cache");
+            }
+
+            if (settings.CacheLocation != null)
+            {
+                builder.AppendSwitchQuoted("--cache-location", settings.CacheLocation.FullPath);
+            }
+
+            if (settings.CacheStrategy != null)
+            {
+                builder.AppendSwitch("--cache-strategy", settings.CacheStrategy.Name);
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {

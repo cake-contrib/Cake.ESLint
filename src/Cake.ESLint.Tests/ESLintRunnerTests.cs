@@ -436,6 +436,96 @@ namespace Cake.ESLint.Tests
             actual.Args.ShouldContain("--no-ignore");
         }
 
+        [Fact]
+        public void Should_add_quiet_arg_when_Quiet_is_set()
+        {
+            fixture.Settings.Quiet = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--quiet");
+        }
+
+        [Fact]
+        public void Should_add_max_warnings_arg_when_MaxWarnings_is_set()
+        {
+            fixture.Settings.MaxWarnings = 5;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--max-warnings 5");
+        }
+
+        [Fact]
+        public void Should_no_inline_config_arg_when_NoInlineConfig_is_set()
+        {
+            fixture.Settings.NoInlineConfig = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--no-inline-config");
+        }
+
+        [Fact]
+        public void Should_add_report_unused_disable_directives_arg_when_ReportUnusedDisableDirectives_is_set()
+        {
+            fixture.Settings.ReportUnusedDisableDirectives = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--report-unused-disable-directives");
+        }
+
+        [Fact]
+        public void Should_add_cache_arg_when_Cache_is_set()
+        {
+            fixture.Settings.Cache = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--cache");
+        }
+
+        [Fact]
+        public void Should_add_cache_location_arg_when_CacheLocation_is_set_from_file()
+        {
+            fixture.Settings.CacheLocation = new FilePath("foo.cache");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--cache-location \"foo.cache\"");
+        }
+
+        [Fact]
+        public void Should_add_cache_location_arg_when_CacheLocation_is_set_from_directory()
+        {
+            fixture.Settings.CacheLocation = new DirectoryPath("/tmp/cache");
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--cache-location \"/tmp/cache\"");
+        }
+
+        [Fact]
+        public void Should_add_cache_strategy_arg_when_CacheStrategy_is_set_to_metadata()
+        {
+            fixture.Settings.CacheStrategy = ESLintCacheStrategy.Metadata;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--cache-strategy metadata");
+        }
+
+        [Fact]
+        public void Should_add_cache_strategy_arg_when_CacheStrategy_is_set_to_content()
+        {
+            fixture.Settings.CacheStrategy = ESLintCacheStrategy.Content;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--cache-strategy content");
+        }
+
         // ReSharper disable once ClassNeverInstantiated.Local
         private class OutputFormatDataGenerator : IEnumerable<object[]>
         {
