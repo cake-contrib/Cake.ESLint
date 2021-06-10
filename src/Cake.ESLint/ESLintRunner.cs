@@ -243,6 +243,21 @@ namespace Cake.ESLint
                 builder.Append("--report-unused-disable-directives");
             }
 
+            if (settings.Cache)
+            {
+                builder.Append("--cache");
+            }
+
+            if (settings.CacheLocation != null)
+            {
+                builder.AppendSwitchQuoted("--cache-location", settings.CacheLocation.FullPath);
+            }
+
+            if (settings.CacheStrategy != null)
+            {
+                builder.AppendSwitch("--cache-strategy", settings.CacheStrategy.Name);
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {

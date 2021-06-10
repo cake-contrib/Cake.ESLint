@@ -195,6 +195,25 @@ namespace Cake.ESLint
         public bool ReportUnusedDisableDirectives { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to check only hanged files.
+        /// <para>Option: <c>--cache</c>.</para>
+        /// </summary>
+        public bool Cache { get; set; }
+
+        /// <summary>
+        /// Gets or sets the path to the cache file or directory.
+        /// <para>Option: <c>--cache-location</c>.</para>
+        /// </summary>
+        public Path CacheLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets the strategy to use for detecting changed files.
+        /// <para>Option: <c>--cache-strategy</c>.</para>
+        /// </summary>
+        public ESLintCacheStrategy CacheStrategy { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the
