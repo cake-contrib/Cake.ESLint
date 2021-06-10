@@ -181,6 +181,20 @@ namespace Cake.ESLint
         public int? MaxWarnings { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to prevent comments from changing config or rules.
+        /// <para>Option: <c>--no-inline-config</c>.</para>
+        /// </summary>
+        public bool NoInlineConfig { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to report errors for unused eslint-disable directives.
+        /// <para>Option: <c>--report-unused-disable-directives</c>.</para>
+        /// </summary>
+        public bool ReportUnusedDisableDirectives { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the
