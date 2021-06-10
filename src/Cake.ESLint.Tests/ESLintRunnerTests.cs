@@ -456,6 +456,26 @@ namespace Cake.ESLint.Tests
             actual.Args.ShouldContain("--max-warnings 5");
         }
 
+        [Fact]
+        public void Should_no_inline_config_arg_when_NoInlineConfig_is_set()
+        {
+            fixture.Settings.NoInlineConfig = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--no-inline-config");
+        }
+
+        [Fact]
+        public void Should_add_report_unused_disable_directives_arg_when_ReportUnusedDisableDirectives_is_set()
+        {
+            fixture.Settings.ReportUnusedDisableDirectives = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--report-unused-disable-directives");
+        }
+
         // ReSharper disable once ClassNeverInstantiated.Local
         private class OutputFormatDataGenerator : IEnumerable<object[]>
         {

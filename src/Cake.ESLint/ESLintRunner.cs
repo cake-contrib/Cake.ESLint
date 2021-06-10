@@ -233,6 +233,16 @@ namespace Cake.ESLint
                 builder.AppendSwitch("--max-warnings", settings.MaxWarnings.Value.ToString());
             }
 
+            if (settings.NoInlineConfig)
+            {
+                builder.Append("--no-inline-config");
+            }
+
+            if (settings.ReportUnusedDisableDirectives)
+            {
+                builder.Append("--report-unused-disable-directives");
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {
