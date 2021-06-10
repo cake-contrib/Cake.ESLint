@@ -223,6 +223,16 @@ namespace Cake.ESLint
                 builder.AppendSwitchQuoted("--ignore-pattern", pattern);
             }
 
+            if (settings.Quiet)
+            {
+                builder.Append("--quiet");
+            }
+
+            if (settings.MaxWarnings.HasValue)
+            {
+                builder.AppendSwitch("--max-warnings", settings.MaxWarnings.Value.ToString());
+            }
+
             // render arguments
             foreach (var file in settings.Files.EnsureNotNull())
             {
