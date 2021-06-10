@@ -168,6 +168,19 @@ namespace Cake.ESLint
         public IEnumerable<string> IgnorePatterns { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether
+        /// to report errors only.
+        /// <para>Option: <c>--quiet</c>.</para>
+        /// </summary>
+        public bool Quiet { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of warnings to trigger nonzero exit code.
+        /// <para>Option: <c>--max-warnings</c>.</para>
+        /// </summary>
+        public int? MaxWarnings { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to continue on lint errors.
         /// <para>
         /// The default is to throw a <see cref="CakeException"/> if the

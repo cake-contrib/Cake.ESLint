@@ -436,6 +436,26 @@ namespace Cake.ESLint.Tests
             actual.Args.ShouldContain("--no-ignore");
         }
 
+        [Fact]
+        public void Should_add_quiet_arg_when_Quiet_is_set()
+        {
+            fixture.Settings.Quiet = true;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--quiet");
+        }
+
+        [Fact]
+        public void Should_add_max_warnings_arg_when_MaxWarnings_is_set()
+        {
+            fixture.Settings.MaxWarnings = 5;
+
+            var actual = fixture.Run();
+
+            actual.Args.ShouldContain("--max-warnings 5");
+        }
+
         // ReSharper disable once ClassNeverInstantiated.Local
         private class OutputFormatDataGenerator : IEnumerable<object[]>
         {
