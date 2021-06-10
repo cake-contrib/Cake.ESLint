@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.ESLint/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.ESLint - API - ESLintSettings.Config Property</title>
+        <title>Cake.ESLint - API - ESLintSettings.ReportUnusedDisableDirectives Property</title>
         <link href="/Cake.ESLint/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.ESLint/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -139,7 +139,7 @@
 			<li class="header">Constructors</li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/F1AF7EB4">ESLintSettings<wbr>()<wbr></a></li>
 			<li class="header">Property Members</li>
-				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C2A3265D">Config</a></li>
+				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C2A3265D">Config</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/375C7B37">ContinueOnErrors</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/7FD844B4">Directories</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/1501A773">Environments</a></li>
@@ -161,7 +161,7 @@
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/D3EA9CFB">ParserOptions</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/76C4D5C0">Plugins</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/3DEA3229">Quiet</a></li>
-				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/636A87A3">Report<wbr>Unused<wbr>Disable<wbr>Directives</a></li>
+				<li class="selected"><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/636A87A3">Report<wbr>Unused<wbr>Disable<wbr>Directives</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/C0DD23B8">Resolve<wbr>Plugins<wbr>Relative<wbr>To</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/A5C73DF6">Rules</a></li>
 				<li><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings/4EAD5276">RulesDirs</a></li>
@@ -181,15 +181,16 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.ESLint/api/Cake.ESLint/ESLintSettings">ESLintSettings</a>.</h3>
-	<h1>Config <small>Property</small></h1>
+	<h1>Report<wbr>Unused<wbr>Disable<wbr>Directives <small>Property</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Gets or sets a path to a config file.
-    <p>Option: <code class="cs">--config</code>.</p>
+    Gets or sets a value indicating whether
+    to report errors for unused eslint-disable directives.
+    <p>Option: <code class="cs">--report-unused-disable-directives</code>.</p>
     </div>
 
 		<div class="panel panel-default">
@@ -207,7 +208,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public FilePath Config { get; set; }</code></pre>
+	<pre><code>public bool ReportUnusedDisableDirectives { get; set; }</code></pre>
 
 
 
@@ -224,7 +225,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>FilePath</td>
+					<td>bool</td>
 					<td></td>
 				</tr>
 			</tbody></table>
