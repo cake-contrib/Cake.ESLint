@@ -61,7 +61,7 @@ jobs:
           cake-version: 0.38.5
           cake-bootstrap: true
       - name: Upload Issues
-        uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v2.2.4
         with:
           if-no-files-found: warn
           name: ${{ matrix.os }} Issues
@@ -69,7 +69,7 @@ jobs:
             BuildArtifacts/report.html
             BuildArtifacts/**/coverlet/*.xml
       - name: Upload Packages
-        uses: actions/upload-artifact@v2.2.3
+        uses: actions/upload-artifact@v2.2.4
         if: runner.os == 'Windows'
         with:
           if-no-files-found: warn
