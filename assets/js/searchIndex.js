@@ -67,28 +67,28 @@ var searchModule = function() {
     a(
         {
             id:2,
-            title:"ESLintOutputFormat",
-            content:"ESLintOutputFormat",
+            title:"ESLintSettings",
+            content:"ESLintSettings",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
-            title:"ESLintOutputFormat",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
+            title:"ESLintSettings",
             description:""
         }
     );
     a(
         {
             id:3,
-            title:"ESLintFixType",
-            content:"ESLintFixType",
+            title:"ESLintRunner",
+            content:"ESLintRunner",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
-            title:"ESLintFixType",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintRunner',
+            title:"ESLintRunner",
             description:""
         }
     );
@@ -109,28 +109,28 @@ var searchModule = function() {
     a(
         {
             id:5,
-            title:"ESLintSettings",
-            content:"ESLintSettings",
+            title:"ESLintOutputFormat",
+            content:"ESLintOutputFormat",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
-            title:"ESLintSettings",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
+            title:"ESLintOutputFormat",
             description:""
         }
     );
     a(
         {
             id:6,
-            title:"ESLintRunner",
-            content:"ESLintRunner",
+            title:"ESLintFixType",
+            content:"ESLintFixType",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintRunner',
-            title:"ESLintRunner",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
+            title:"ESLintFixType",
             description:""
         }
     );
