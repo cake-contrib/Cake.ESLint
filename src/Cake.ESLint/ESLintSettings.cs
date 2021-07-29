@@ -196,7 +196,7 @@ namespace Cake.ESLint
 
         /// <summary>
         /// Gets or sets a value indicating whether
-        /// to check only hanged files.
+        /// to check only changed files.
         /// <para>Option: <c>--cache</c>.</para>
         /// </summary>
         public bool Cache { get; set; }
