@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp2.1;net5.0</TargetFrameworks>
+        <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
         <TargetFrameworks Condition="'$(OS)'!='Unix'">net461;$(TargetFrameworks)</TargetFrameworks>
         <NoWarn>$(NoWarn);CS1591;SA1600</NoWarn>
 
