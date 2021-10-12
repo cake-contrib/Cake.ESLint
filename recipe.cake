@@ -19,6 +19,11 @@ BuildParameters.SetParameters(
 
 BuildParameters.PrintParameters(Context);
 
+
+// workaround for https://github.com/cake-contrib/Cake.Recipe/issues/862
+ToolSettings.SetToolPreprocessorDirectives(
+    reSharperTools: "#tool nuget:?package=JetBrains.ReSharper.CommandLineTools&version=2021.2.0");
+
 ToolSettings.SetToolSettings(context: Context);
 
 Build.RunDotNetCore();

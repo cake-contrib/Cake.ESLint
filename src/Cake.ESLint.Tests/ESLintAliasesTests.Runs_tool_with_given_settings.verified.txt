@@ -1,21 +1,7 @@
-{
-  Path: {
-    FullPath: /Working/tools/eslint,
-    Separator: "/",
-    Segments: [
-      /Working,
-      tools,
-      eslint
-    ]
-  },
+﻿{
+  Path: /Working/tools/eslint,
   Process: {
-    WorkingDirectory: {
-      FullPath: /Working,
-      Separator: "/",
-      Segments: [
-        /Working
-      ]
-    }
+    WorkingDirectory: /Working
   },
   Args: 
 }
