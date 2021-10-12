@@ -3,10 +3,7 @@
         <TargetFrameworks>netstandard2.0;net461;net5.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <IncludeSymbols>true</IncludeSymbols>
-        <!-- Don't publish snupkg for now, until NET 6 is released.
-            see https://github.com/NuGet/Home/issues/10791
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        -->
     </PropertyGroup>
 
     <ItemGroup>
