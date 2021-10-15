@@ -35,6 +35,10 @@ jobs:
       run: git fetch --prune --unshallow
     - uses: actions/setup-dotnet@v1.8.2
       with:
+        # codecov needs 2.1
+        dotnet-version: '2.1.818'
+    - uses: actions/setup-dotnet@v1.8.2
+      with:
         # unittests needs 3.1
         dotnet-version: '3.1.x'
     - uses: actions/setup-dotnet@v1.8.2
