@@ -30,24 +30,19 @@ jobs:
 
     steps:
     - name: Checkout the repository 
-      uses: actions/checkout@v2.3.4
+      uses: actions/checkout@v2.4.0
     - name: Fetch all tags and branches
       run: git fetch --prune --unshallow
-    - uses: actions/setup-dotnet@v1.8.2
-      with:
-        # unittests needs 3.1
-        dotnet-version: '3.1.x'
-    - uses: actions/setup-dotnet@v1.8.2
-      with:
-        # gitversion needs 5.0
-        dotnet-version: '5.0.x'
-    - uses: actions/setup-dotnet@v1.8.2
-      with:
-        # need .NET 6 rc2 to build
-        dotnet-version: '6.0.x'
-        include-prerelease: true
+      - uses: actions/setup-dotnet@v1.9.0
+        with:
+          # codecov needs 2.1, unittests needs 3.1, gitversion needs 5.0
+          dotnet-version: |
+            2.1.818
+            3.1.x
+            5.0.x
+            6.0.x
     - name: Cache Tools
-      uses: actions/cache@v2.1.6
+      uses: actions/cache@v2.1.7
       with:
         path: tools
         key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
@@ -63,7 +58,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - name: Build project
-      uses: cake-build/cake-action@v1.3.0
+      uses: cake-build/cake-action@v1.4.0
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
