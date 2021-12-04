@@ -49,21 +49,12 @@ jobs:
         run: git fetch --prune --unshallow
       - uses: actions/setup-dotnet@v1.9.0
         with:
-          # codecov needs 2.1
-          dotnet-version: '2.1.818'
-      - uses: actions/setup-dotnet@v1.9.0
-        with:
-          # unittests needs 3.1
-          dotnet-version: '3.1.x'
-      - uses: actions/setup-dotnet@v1.9.0
-        with:
-          # gitversion needs 5.0
-          dotnet-version: '5.0.x'
-      - uses: actions/setup-dotnet@v1.9.0
-        with:
-          # need .NET 6 rc2 to build
-          dotnet-version: '6.0.x'
-          include-prerelease: true
+          # codecov needs 2.1, unittests needs 3.1, gitversion needs 5.0
+          dotnet-version: |
+            2.1.818
+            3.1.x
+            5.0.x
+            6.0.x
       - name: Cache Tools
         uses: actions/cache@v2.1.7
         with:
