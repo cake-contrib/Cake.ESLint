@@ -1,5 +1,5 @@
 #addin nuget:?package=Cake.Npm&version=1.0.0
-#r "..\..\src\Cake.ESLint\bin\Debug\netstandard2.0\Cake.ESLint.dll"
+#r "..\..\src\Cake.ESLint\bin\Debug\net6.0\Cake.ESLint.dll"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -32,6 +32,7 @@ Task("manual-installation")
       x.ContinueOnErrors = true;
       x.AddDirectory("src1");
    });
+   Information("> If you saw an error above, everything is fine!");
 });
 
 Task("local-project")
@@ -47,6 +48,7 @@ Task("local-project")
       x.ContinueOnErrors = true;
       x.AddDirectory("."); // relative to WorkingDirectory
    });
+   Information("> If you saw an error above, everything is fine!");
 });
 
 Task("Default")
