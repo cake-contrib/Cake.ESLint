@@ -39,20 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"ESLintOutputFormat",
-            content:"ESLintOutputFormat",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
-            title:"ESLintOutputFormat",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
             title:"ESLintSettingsExtensions",
             content:"ESLintSettingsExtensions",
             description:'',
@@ -61,6 +47,20 @@ var searchModule = function() {
         {
             url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
             title:"ESLintSettingsExtensions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:1,
+            title:"ESLintFixType",
+            content:"ESLintFixType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
+            title:"ESLintFixType",
             description:""
         }
     );
@@ -81,6 +81,20 @@ var searchModule = function() {
     a(
         {
             id:3,
+            title:"ESLintOutputFormat",
+            content:"ESLintOutputFormat",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
+            title:"ESLintOutputFormat",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"ESLintAliases",
             content:"ESLintAliases",
             description:'',
@@ -89,20 +103,6 @@ var searchModule = function() {
         {
             url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
             title:"ESLintAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"ESLintFixType",
-            content:"ESLintFixType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
-            title:"ESLintFixType",
             description:""
         }
     );
