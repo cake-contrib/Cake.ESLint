@@ -4,7 +4,11 @@
     Arguments: [
       {}
     ],
-    WorkingDirectory: /Working
+    WorkingDirectory: /Working,
+    NoWorkingDirectory: false,
+    RedirectStandardError: false,
+    RedirectStandardOutput: false,
+    Silent: false
   },
   Args: "**/*"
 }
