@@ -58,7 +58,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - name: Build project
-      uses: cake-build/cake-action@v1.4.0
+      uses: cake-build/cake-action@v1.4.1
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
