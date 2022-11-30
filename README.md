@@ -65,10 +65,13 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://github.com/nils-a"><img src="https://avatars.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=nils-a" title="Code">💻</a> <a href="#maintenance-nils-a" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/SimonCropp"><img src="https://avatars.githubusercontent.com/u/122666?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Simon Cropp</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=SimonCropp" title="Code">💻</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/nils-a"><img src="https://avatars.githubusercontent.com/u/349188?v=4?s=100" width="100px;" alt="Nils Andresen"/><br /><sub><b>Nils Andresen</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=nils-a" title="Code">💻</a> <a href="#maintenance-nils-a" title="Maintenance">🚧</a></td>
+      <td align="center"><a href="https://github.com/SimonCropp"><img src="https://avatars.githubusercontent.com/u/122666?v=4?s=100" width="100px;" alt="Simon Cropp"/><br /><sub><b>Simon Cropp</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=SimonCropp" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/pascalberger"><img src="https://avatars.githubusercontent.com/u/2190718?v=4?s=100" width="100px;" alt="Pascal Berger"/><br /><sub><b>Pascal Berger</b></sub></a><br /><a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=pascalberger" title="Code">💻</a> <a href="https://github.com/cake-contrib/Cake.ESLint/commits?author=pascalberger" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
