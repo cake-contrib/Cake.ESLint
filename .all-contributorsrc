@@ -23,6 +23,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "pascalberger",
+      "name": "Pascal Berger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2190718?v=4",
+      "profile": "https://github.com/pascalberger",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -30,5 +40,6 @@
   "projectOwner": "cake-contrib",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
