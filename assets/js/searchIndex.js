@@ -53,34 +53,6 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"ESLintRunner",
-            content:"ESLintRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintRunner',
-            title:"ESLintRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"ESLintAliases",
-            content:"ESLintAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
-            title:"ESLintAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"ESLintCacheStrategy",
             content:"ESLintCacheStrategy",
             description:'',
@@ -94,7 +66,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
+            id:2,
+            title:"ESLintFixType",
+            content:"ESLintFixType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
+            title:"ESLintFixType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
             title:"ESLintSettings",
             content:"ESLintSettings",
             description:'',
@@ -108,15 +94,29 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
-            title:"ESLintFixType",
-            content:"ESLintFixType",
+            id:4,
+            title:"ESLintAliases",
+            content:"ESLintAliases",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
-            title:"ESLintFixType",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
+            title:"ESLintAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"ESLintRunner",
+            content:"ESLintRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintRunner',
+            title:"ESLintRunner",
             description:""
         }
     );
