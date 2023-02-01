@@ -35,17 +35,17 @@ namespace Cake.ESLint
         }
 
         /// <summary>
-        /// Gets the fix-type: Problem.
+        /// Gets the cache strategy "metadata".
         /// </summary>
         public static ESLintCacheStrategy Metadata { get; } = new ESLintCacheStrategy("metadata");
 
         /// <summary>
-        /// Gets the fix-type: Suggestion.
+        /// Gets the cache strategy "content".
         /// </summary>
         public static ESLintCacheStrategy Content { get; } = new ESLintCacheStrategy("content");
 
         /// <summary>
-        /// Gets the name of the problem.
+        /// Gets the name of the cache strategy.
         /// </summary>
         public string Name { get; }
     }

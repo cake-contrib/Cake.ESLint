@@ -279,6 +279,7 @@ namespace Cake.ESLint
             // instead of any other version.
             if (settings.NoWorkingDirectory || settings.WorkingDirectory == null)
             {
+                log.Verbose($"No working directory set.");
                 return;
             }
 
@@ -286,6 +287,7 @@ namespace Cake.ESLint
                 fileSystem.GetDirectory(settings.WorkingDirectory.Combine("node_modules/.bin"));
             if (!nodeBin.Exists)
             {
+                log.Warning($"node_modules/.bin does not exist in {settings.WorkingDirectory.FullPath}.");
                 return;
             }
 
