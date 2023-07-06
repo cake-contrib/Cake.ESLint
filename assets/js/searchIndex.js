@@ -39,48 +39,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"ESLintOutputFormat",
-            content:"ESLintOutputFormat",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
-            title:"ESLintOutputFormat",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"ESLintSettingsExtensions",
-            content:"ESLintSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
-            title:"ESLintSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"ESLintAliases",
-            content:"ESLintAliases",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
-            title:"ESLintAliases",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"ESLintCacheStrategy",
             content:"ESLintCacheStrategy",
             description:'',
@@ -94,21 +52,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"ESLintSettings",
-            content:"ESLintSettings",
+            id:1,
+            title:"ESLintAliases",
+            content:"ESLintAliases",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
-            title:"ESLintSettings",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
+            title:"ESLintAliases",
             description:""
         }
     );
     a(
         {
-            id:5,
+            id:2,
+            title:"ESLintFixType",
+            content:"ESLintFixType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
+            title:"ESLintFixType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
             title:"ESLintRunner",
             content:"ESLintRunner",
             description:'',
@@ -122,15 +94,43 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"ESLintFixType",
-            content:"ESLintFixType",
+            id:4,
+            title:"ESLintOutputFormat",
+            content:"ESLintOutputFormat",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
-            title:"ESLintFixType",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
+            title:"ESLintOutputFormat",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"ESLintSettings",
+            content:"ESLintSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
+            title:"ESLintSettings",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"ESLintSettingsExtensions",
+            content:"ESLintSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
+            title:"ESLintSettingsExtensions",
             description:""
         }
     );
