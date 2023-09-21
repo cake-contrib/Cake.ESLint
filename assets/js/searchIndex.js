@@ -39,14 +39,14 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"ESLintSettingsExtensions",
-            content:"ESLintSettingsExtensions",
+            title:"ESLintOutputFormat",
+            content:"ESLintOutputFormat",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
-            title:"ESLintSettingsExtensions",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
+            title:"ESLintOutputFormat",
             description:""
         }
     );
@@ -81,14 +81,14 @@ var searchModule = function() {
     a(
         {
             id:3,
-            title:"ESLintOutputFormat",
-            content:"ESLintOutputFormat",
+            title:"ESLintSettingsExtensions",
+            content:"ESLintSettingsExtensions",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
-            title:"ESLintOutputFormat",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
+            title:"ESLintSettingsExtensions",
             description:""
         }
     );
@@ -109,20 +109,6 @@ var searchModule = function() {
     a(
         {
             id:5,
-            title:"ESLintSettings",
-            content:"ESLintSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
-            title:"ESLintSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
             title:"ESLintAliases",
             content:"ESLintAliases",
             description:'',
@@ -131,6 +117,20 @@ var searchModule = function() {
         {
             url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
             title:"ESLintAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"ESLintSettings",
+            content:"ESLintSettings",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettings',
+            title:"ESLintSettings",
             description:""
         }
     );
