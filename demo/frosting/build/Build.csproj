@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Frosting" Version="3.0.0" />
-    <PackageReference Include="Cake.Npm" Version="2.0.0" />
+    <PackageReference Include="Cake.Frosting" Version="4.0.0" />
+    <PackageReference Include="Cake.Npm" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cake.ESLint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\src\Cake.ESLint\bin\Debug\netstandard2.0\Cake.ESLint.dll</HintPath>
+    <Reference Include="Cake.ESLint">
+      <HintPath>$(ProjectDir)../../../src/Cake.ESLint/bin/Debug/net8.0/Cake.ESLint.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
