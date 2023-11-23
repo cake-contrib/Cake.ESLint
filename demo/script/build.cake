@@ -1,5 +1,5 @@
 #addin nuget:?package=Cake.Npm&version=3.0.0
-#r "..\..\src\Cake.ESLint\bin\Debug\net6.0\Cake.ESLint.dll"
+#r "..\..\src\Cake.ESLint\bin\Debug\net8.0\Cake.ESLint.dll"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -12,11 +12,11 @@ var target = Argument("target", "Default");
 ///////////////////////////////////////////////////////////////////////////////
 
 Task("ensure-eslint-tool")
-.Does(() => 
+.Does(() =>
 {
    var tools = Context.Configuration.GetToolPath(Context.Environment.WorkingDirectory, Context.Environment);
    CreateDirectory(tools);
-   var settings = new NpmInstallSettings 
+   var settings = new NpmInstallSettings
    {
       WorkingDirectory = tools
    };
