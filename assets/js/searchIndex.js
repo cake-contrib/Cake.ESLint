@@ -53,20 +53,6 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"ESLintOutputFormat",
-            content:"ESLintOutputFormat",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
-            title:"ESLintOutputFormat",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
             title:"ESLintSettings",
             content:"ESLintSettings",
             description:'',
@@ -80,21 +66,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:3,
-            title:"ESLintAliases",
-            content:"ESLintAliases",
+            id:2,
+            title:"ESLintOutputFormat",
+            content:"ESLintOutputFormat",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
-            title:"ESLintAliases",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintOutputFormat',
+            title:"ESLintOutputFormat",
             description:""
         }
     );
     a(
         {
-            id:4,
+            id:3,
             title:"ESLintRunner",
             content:"ESLintRunner",
             description:'',
@@ -108,7 +94,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:5,
+            id:4,
             title:"ESLintCacheStrategy",
             content:"ESLintCacheStrategy",
             description:'',
@@ -117,6 +103,20 @@ var searchModule = function() {
         {
             url:'/Cake.ESLint/api/Cake.ESLint/ESLintCacheStrategy',
             title:"ESLintCacheStrategy",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"ESLintAliases",
+            content:"ESLintAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintAliases',
+            title:"ESLintAliases",
             description:""
         }
     );
