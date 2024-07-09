@@ -33,7 +33,7 @@ jobs:
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
     - name: Fetch all tags and branches
       run: git fetch --prune --unshallow
-    - uses: actions/setup-dotnet@v4.0.0
+    - uses: actions/setup-dotnet@v4.0.1
       with:
         # codecov needs 2.1, unittests needs 3.1, gitversion needs 5.0
         dotnet-version: |
