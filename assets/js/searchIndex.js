@@ -53,34 +53,20 @@ var searchModule = function() {
     a(
         {
             id:1,
-            title:"ESLintCacheStrategy",
-            content:"ESLintCacheStrategy",
+            title:"ESLintFixType",
+            content:"ESLintFixType",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintCacheStrategy',
-            title:"ESLintCacheStrategy",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
+            title:"ESLintFixType",
             description:""
         }
     );
     a(
         {
             id:2,
-            title:"ESLintSettingsExtensions",
-            content:"ESLintSettingsExtensions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
-            title:"ESLintSettingsExtensions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
             title:"ESLintSettings",
             content:"ESLintSettings",
             description:'',
@@ -94,15 +80,29 @@ var searchModule = function() {
     );
     a(
         {
-            id:4,
-            title:"ESLintFixType",
-            content:"ESLintFixType",
+            id:3,
+            title:"ESLintCacheStrategy",
+            content:"ESLintCacheStrategy",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.ESLint/api/Cake.ESLint/ESLintFixType',
-            title:"ESLintFixType",
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintCacheStrategy',
+            title:"ESLintCacheStrategy",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"ESLintSettingsExtensions",
+            content:"ESLintSettingsExtensions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.ESLint/api/Cake.ESLint/ESLintSettingsExtensions',
+            title:"ESLintSettingsExtensions",
             description:""
         }
     );
