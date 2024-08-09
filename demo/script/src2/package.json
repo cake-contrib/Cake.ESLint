@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "9.8.0"
+    "eslint": "9.9.0"
   }
 }
