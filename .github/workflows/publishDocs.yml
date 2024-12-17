@@ -24,7 +24,7 @@ jobs:
         path: tools
         key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
     - name: Publishing documentaiton
-      uses: cake-build/cake-action@v2.0.0
+      uses: cake-build/cake-action@1223b6fa067ad192159f43b50cd4f953679b0934 # v2.0.0
       with:
         script-path: recipe.cake
         target: Force-Publish-Documentation

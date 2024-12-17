@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Fetch all tags and branches
         run: git fetch --prune --unshallow
-      - uses: actions/setup-dotnet@v4.1.0
+      - uses: actions/setup-dotnet@3e891b0cb619bf60e2c25674b222b8940e2c1c25 # v4.1.0
         with:
           # codecov needs 2.1, unittests needs 3.1, gitversion needs 5.0
           dotnet-version: |
@@ -63,14 +63,14 @@ jobs:
           path: tools
           key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
       - name: Build project
-        uses: cake-build/cake-action@v2.0.0
+        uses: cake-build/cake-action@1223b6fa067ad192159f43b50cd4f953679b0934 # v2.0.0
         with:
           script-path: recipe.cake
           target: CI
           verbosity: Diagnostic
           cake-version: 1.3.0
       - name: Upload Issues
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         with:
           if-no-files-found: warn
           name: ${{ matrix.os }} Issues
@@ -78,7 +78,7 @@ jobs:
             BuildArtifacts/report.html
             BuildArtifacts/**/coverlet/*.xml
       - name: Upload Packages
-        uses: actions/upload-artifact@v4.4.3
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
         if: runner.os == 'Windows'
         with:
           if-no-files-found: warn
