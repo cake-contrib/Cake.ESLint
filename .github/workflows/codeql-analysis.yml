@@ -63,7 +63,7 @@ jobs:
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
-        cake-version: 1.3.0
+        cake-version: tool-manifest
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@755f44910c12a3d7ca0d8c6e42c048b3362f7cec # v3
