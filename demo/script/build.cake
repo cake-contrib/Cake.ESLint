@@ -1,4 +1,4 @@
-#addin nuget:?package=Cake.Npm&version=5.0.0
+#addin nuget:?package=Cake.Npm&version=5.1.0
 #r "..\..\src\Cake.ESLint\bin\Debug\net9.0\Cake.ESLint.dll"
 
 ///////////////////////////////////////////////////////////////////////////////
