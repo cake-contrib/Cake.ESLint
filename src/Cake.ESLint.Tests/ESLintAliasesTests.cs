@@ -33,7 +33,6 @@ using Xunit;
 
 namespace Cake.ESLint.Tests
 {
-    [UsesVerify]
     public class ESLintAliasesTests
     {
         private readonly ESLintAliasesFixture fixture;

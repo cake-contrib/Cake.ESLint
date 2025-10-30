@@ -17,7 +17,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: false
@@ -30,28 +30,38 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
     - name: Fetch all tags and branches
       run: git fetch --prune --unshallow
-    - uses: actions/setup-dotnet@v3.2.0
+    - uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d # v5.0.0
       with:
-        # codecov needs 2.1, unittests needs 3.1, gitversion needs 5.0
+        # gitversion needs 5.0
+        # cake 1.3 needs 6.0
+        # .NET 9 to build
         dotnet-version: |
-          2.1
-          3.1
-          5.0
-          6.0
-          7.0
-          8.0
+            5.0
+            6.0
+            9.0
+    - name: Install mono
+      if: runner.os == 'Linux'
+      # check https://www.mono-project.com/download/stable/#download-lin
+      run: |
+          sudo apt install ca-certificates gnupg
+          sudo gpg --homedir /tmp --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+          sudo chmod +r /usr/share/keyrings/mono-official-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+          sudo apt update
+          sudo apt install -y mono-complete
+          mono --version
     - name: Cache Tools
-      uses: actions/cache@v3.3.2
+      uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
       with:
         path: tools
         key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@f443b600d91635bebf5b0d9ebc620189c0d6fba5 # v4
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
@@ -60,11 +70,11 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - name: Build project
-      uses: cake-build/cake-action@v1.4.1
+      uses: cake-build/cake-action@d218f1133bb74a1df0b08c89cfd8fc100c09e1a0 # v3.0.1
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
-        cake-version: 1.3.0
+        cake-version: tool-manifest
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@f443b600d91635bebf5b0d9ebc620189c0d6fba5 # v4
